@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ScrollAnimation = ({ children, delay = 0, direction = 'up' }) => {
+const ScrollAnimation = ({ children, delay = 0, direction = 'up', styleType = 'slide' }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const ScrollAnimation = ({ children, delay = 0, direction = 'up' }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.transform = 'none';
           }
         });
       },
@@ -31,18 +31,29 @@ const ScrollAnimation = ({ children, delay = 0, direction = 'up' }) => {
   }, []);
 
   const getTransform = () => {
+    let base = '';
     switch (direction) {
       case 'up':
-        return 'translateY(50px)';
+        base = 'translateY(50px)';
+        break;
       case 'down':
-        return 'translateY(-50px)';
+        base = 'translateY(-50px)';
+        break;
       case 'left':
-        return 'translateX(50px)';
+        base = 'translateX(50px)';
+        break;
       case 'right':
-        return 'translateX(-50px)';
+        base = 'translateX(-50px)';
+        break;
       default:
-        return 'translateY(50px)';
+        base = 'translateY(50px)';
     }
+    if (styleType === 'scale') {
+      return `${base} scale(0.85)`;
+    } else if (styleType === 'rotate') {
+      return `${base} rotate(-8deg)`;
+    }
+    return base;
   };
 
   return (
@@ -51,7 +62,7 @@ const ScrollAnimation = ({ children, delay = 0, direction = 'up' }) => {
       style={{
         opacity: 0,
         transform: getTransform(),
-        transition: `all 0.8s ease-out ${delay}s`
+        transition: `all 0.8s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`
       }}
     >
       {children}
