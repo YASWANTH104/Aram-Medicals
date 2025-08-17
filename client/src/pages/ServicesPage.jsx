@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeartbeat, FaUserMd, FaLungs, FaBrain, FaStethoscope, FaHospitalAlt, FaChevronRight, FaStar, FaClock, FaUserShield, FaTimes, FaCross } from 'react-icons/fa';
 import ScrollAnimation from '../components/ScrollAnimation';
@@ -57,12 +57,32 @@ const features = [
 
 export default function ServicesPage() {
   const [modalIdx, setModalIdx] = useState(null);
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
+  const [sectionCenter, setSectionCenter] = useState({ top: 0, left: 0 });
+  const [isModalAnimating, setIsModalAnimating] = useState(false);
+  const servicesSectionRef = useRef(null);
+
+  // Trigger animation after modal position is set
+  useEffect(() => {
+    if (modalIdx !== null) {
+      // Calculate section center
+      if (servicesSectionRef.current) {
+        const rect = servicesSectionRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        setSectionCenter({
+          top: rect.top + scrollTop + rect.height / 2,
+          left: rect.left + rect.width / 2
+        });
+      }
+      // Small delay to ensure position is set before animation starts
+      setTimeout(() => setIsModalAnimating(true), 50);
+    } else {
+      setIsModalAnimating(false);
+    }
+  }, [modalIdx]);
 
   return (
     <>
-      {/* Medical Background Graphics */}
-      <MedicalBackgroundGraphics />
-      
       <div className="pt-28 pb-8 bg-white/70 backdrop-blur-sm min-h-[80vh] w-full relative overflow-hidden">
         {/* Floating Hearts Background Animation */}
         <div className="absolute inset-0 pointer-events-none z-0">
@@ -73,20 +93,20 @@ export default function ServicesPage() {
           {/* Hero Section */}
       <ScrollAnimation direction="up" delay={0.1}>
         <div className="w-full text-center mb-16 px-4 md:px-8">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#1aab3c] to-[#0833a8] bg-clip-text text-transparent">Our Services</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-[#212878] bg-clip-text text-transparent">Our Services</h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">Experience world-class healthcare with a compassionate touch. Our multidisciplinary team offers a full spectrum of medical and surgical services, tailored to your needs.</p>
         </div>
       </ScrollAnimation>
 
       {/* Services Grid */}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4 md:px-8 mb-20">
+      <div ref={servicesSectionRef} className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4 md:px-8 mb-20">
         {services.map((service, idx) => (
           <ScrollAnimation key={service.name} direction="up" delay={0.15 + idx * 0.1}>
             <div
               className="group bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden"
             >
               <div className="mb-6 z-10">{service.icon}</div>
-              <h3 className="text-3xl font-bold mb-4" style={{ color: '#0833a8' }}>{service.name}</h3>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#212878' }}>{service.name}</h3>
               <p className="text-gray-700 mb-6 z-10 text-lg leading-relaxed">{service.desc}</p>
               <div className="flex gap-3 mt-auto z-10">
                 <Link to="/contact">
@@ -94,12 +114,20 @@ export default function ServicesPage() {
                     Book Now <FaChevronRight />
                   </button>
                 </Link>
-                <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#98C341] text-[#98C341] font-semibold shadow hover:bg-[#7a9f35] hover:text-white transition-colors text-lg" onClick={() => setModalIdx(idx)}>
+                <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#98C341] text-[#98C341] font-semibold shadow hover:bg-[#7a9f35] hover:text-white transition-colors text-lg" onClick={(e) => {
+                  const rect = e.currentTarget.closest('.group').getBoundingClientRect();
+                  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                  setModalPosition({
+                    top: rect.top + scrollTop + rect.height / 2,
+                    left: rect.left + rect.width / 2
+                  });
+                  setModalIdx(idx);
+                }}>
                   Learn More
                 </button>
               </div>
               {/* Animated Gradient Overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#1aab3c]/10 to-[#0833a8]/10 pointer-events-none" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#1aab3c]/10 to-[#212878]/10 pointer-events-none" />
             </div>
           </ScrollAnimation>
         ))}
@@ -107,12 +135,25 @@ export default function ServicesPage() {
 
       {/* Modal for Service Details */}
       {modalIdx !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full relative animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
+          <div 
+            className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full relative mx-4"
+            style={{
+              position: 'absolute',
+              top: isModalAnimating ? `${sectionCenter.top}px` : `${modalPosition.top}px`,
+              left: isModalAnimating ? `${sectionCenter.left}px` : `${modalPosition.left}px`,
+              transform: 'translate(-50%, -50%)',
+              maxHeight: '80vh',
+              overflowY: 'auto',
+              transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+              opacity: isModalAnimating ? 1 : 0,
+              scale: isModalAnimating ? 1 : 0.8
+            }}
+          >
             <button className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-[#1aab3c]" onClick={() => setModalIdx(null)}><FaTimes /></button>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6">{services[modalIdx].icon}</div>
-              <h3 className="text-4xl font-bold mb-4" style={{ color: '#0833a8' }}>{services[modalIdx].name}</h3>
+              <h3 className="text-4xl font-bold mb-4" style={{ color: '#212878' }}>{services[modalIdx].name}</h3>
               <p className="text-gray-700 text-lg leading-relaxed">{services[modalIdx].details}</p>
               <Link to="/contact">
                 <button className="inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors" style={{ backgroundColor: '#98C341', color: 'white' }}>Book Appointment</button>
@@ -128,13 +169,13 @@ export default function ServicesPage() {
 
       {/* Why Choose Us Section */}
       <ScrollAnimation direction="up" delay={0.2}>
-        <div className="w-full text-center mb-20 px-4 md:px-8 py-16 bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold mb-6" style={{ color: '#0833a8' }}>Why Choose Aram Medical Foundation?</h2>
+        <div className="w-full text-center mb-20 px-4 md:px-8 py-16 rounded-2xl">
+          <h2 className="text-2xl md:text-4xl font-bold mb-6" style={{ color: '#212878' }}>Why Choose Aram Medical Foundation?</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {features.map((f, idx) => (
               <div key={idx} className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 min-w-[180px] hover:shadow-xl transition-shadow duration-300">
                 {f.icon}
-                <span className="mt-3 font-semibold text-lg text-[#0833a8]">{f.label}</span>
+                <span className="mt-3 font-semibold text-lg text-[#212878]">{f.label}</span>
               </div>
             ))}
           </div>
@@ -145,7 +186,7 @@ export default function ServicesPage() {
       <ScrollAnimation direction="up" delay={0.3}>
         <div className="w-full px-4 md:px-8 mb-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0833a8' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#212878' }}>
               Cardiac Care Services
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -153,45 +194,11 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* Doctor Profile */}
-          <div className="bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl shadow-xl p-8 mb-8">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-shrink-0">
-                <img
-                  src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
-                  alt="Dr. Ranganathan R RM"
-                  className="w-32 h-32 rounded-full object-cover border-4 border-[#98C341] shadow-md"
-                />
-              </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2" style={{ color: '#0833a8' }}>
-                  Dr. Ranganathan R RM
-                </h3>
-                <p className="text-lg font-semibold text-[#98C341] mb-2">
-                  MD (Gen Med), DM (Cardio)
-                </p>
-                <p className="text-gray-700 mb-4">
-                  Director & Cardiologist at Aram Medical Foundation
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <div className="flex items-center gap-2">
-                    <FaClock className="text-[#98C341]" />
-                    <span className="text-sm">24/7 Emergency Care</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaStar className="text-[#98C341]" />
-                    <span className="text-sm">Expert Cardiac Care</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Cardiac Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaHeartbeat className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Cardiac Diagnostics</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Cardiac Diagnostics</h4>
               <p className="text-gray-700 text-sm">
                 Advanced diagnostic procedures including ECG, Echo, Stress Test, and Holter monitoring
               </p>
@@ -199,7 +206,7 @@ export default function ServicesPage() {
             
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaStethoscope className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Interventional Cardiology</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Interventional Cardiology</h4>
               <p className="text-gray-700 text-sm">
                 Angioplasty, Stenting, and other minimally invasive cardiac procedures
               </p>
@@ -207,7 +214,7 @@ export default function ServicesPage() {
             
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaHospitalAlt className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Emergency Cardiac Care</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Emergency Cardiac Care</h4>
               <p className="text-gray-700 text-sm">
                 24/7 emergency cardiac services for heart attacks and acute cardiac conditions
               </p>
@@ -215,7 +222,7 @@ export default function ServicesPage() {
             
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaUserMd className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Preventive Cardiology</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Preventive Cardiology</h4>
               <p className="text-gray-700 text-sm">
                 Risk assessment, lifestyle counseling, and preventive care for heart health
               </p>
@@ -223,7 +230,7 @@ export default function ServicesPage() {
             
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaHeartbeat className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Cardiac Rehabilitation</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Cardiac Rehabilitation</h4>
               <p className="text-gray-700 text-sm">
                 Comprehensive rehabilitation programs for post-cardiac procedure recovery
               </p>
@@ -231,7 +238,7 @@ export default function ServicesPage() {
             
             <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-[#1aab3c]">
               <FaUserShield className="text-3xl text-[#1aab3c] mb-4" />
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#0833a8' }}>Patient-Centric Care</h4>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#212878' }}>Patient-Centric Care</h4>
               <p className="text-gray-700 text-sm">
                 Personalized treatment plans with compassionate care and ongoing support
               </p>
@@ -239,7 +246,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-[#0833a8] text-white rounded-2xl shadow-xl p-8">
+          <div className="bg-[#212878] text-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold mb-2">Contact Us for Cardiac Care</h3>
               <p className="text-lg opacity-90">Get expert cardiac care at Aram Medical Foundation</p>

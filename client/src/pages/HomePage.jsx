@@ -4,6 +4,7 @@ import { FaHeartbeat, FaUserMd, FaAward, FaUsers, FaClock, FaStar, FaCross } fro
 import ScrollAnimation from '../components/ScrollAnimation';
 import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
+import Testimonials from '../components/Testimonials';
 
 // Medical Background Graphics Component
 
@@ -59,22 +60,28 @@ export default function HomePage() {
     setOpenFAQ(0);
   }, []);
 
-  const prevTestimonial = () => setTestimonialIdx((testimonialIdx - 1 + total) % total);
-  const nextTestimonial = () => setTestimonialIdx((testimonialIdx + 1) % total);
+  const prevTestimonial = () => {
+    if (testimonialIdx > 0) {
+      setTestimonialIdx(testimonialIdx - 1);
+    }
+  };
+  const nextTestimonial = () => {
+    if (testimonialIdx < 1) { // Only 2 positions: 0 and 1
+      setTestimonialIdx(testimonialIdx + 1);
+    }
+  };
 
   useEffect(() => {
-    if (!isHovered) {
+    if (!isHovered && testimonialIdx < 1) { // Only auto-advance if not at last position
       timerRef.current = setTimeout(() => {
-        setTestimonialIdx((idx) => (idx + 1) % total);
+        setTestimonialIdx((idx) => idx + 1);
       }, 4000);
     }
     return () => clearTimeout(timerRef.current);
-  }, [testimonialIdx, isHovered, total]);
+  }, [testimonialIdx, isHovered]);
 
   return (
     <>
-      {/* Medical Background Graphics */}
-      <MedicalBackgroundGraphics />
       
       <div className="relative min-h-[80vh] bg-white/70 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-32 pb-16 overflow-hidden z-10">
         {/* Floating Hearts Background Animation */}
@@ -161,7 +168,7 @@ export default function HomePage() {
             {/* Main Title */}
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#0833a8' }}>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#212878' }}>
                   Some cardiac conditions and diseases we treat
                 </h2>
                 <ScrollAnimation direction="up" delay={0.2}>
@@ -245,10 +252,10 @@ export default function HomePage() {
               <ScrollAnimation direction="right" delay={0.6}>
                 <div className="flex justify-center lg:justify-end">
                   <div className="relative">
-                    <div className="w-64 h-64 bg-gradient-to-br from-[#1aab3c] to-[#0833a8] rounded-full flex items-center justify-center shadow-2xl">
+                    <div className="w-64 h-64 bg-gradient-to-br from-[#1aab3c] to-[#212878] rounded-full flex items-center justify-center shadow-2xl">
                       <FaHeartbeat className="text-8xl text-white opacity-80" />
                     </div>
-                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#1aab3c] to-[#0833a8] rounded-full flex items-center justify-center shadow-lg opacity-60">
+                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#1aab3c] to-[#212878] rounded-full flex items-center justify-center shadow-lg opacity-60">
                       <FaHeartbeat className="text-4xl text-white" />
                     </div>
                   </div>
@@ -259,7 +266,7 @@ export default function HomePage() {
             {/* Call to Action */}
             <ScrollAnimation direction="up" delay={0.7}>
               <div className="text-center mt-16">
-                <h3 className="text-3xl font-bold mb-6" style={{ color: '#0833a8' }}>
+                <h3 className="text-3xl font-bold mb-6" style={{ color: '#212878' }}>
                   Ask your cardiologist for comprehensive heart care.
                 </h3>
                 <Link to="/contact">
@@ -278,91 +285,8 @@ export default function HomePage() {
           </div>
         </div>
       </ScrollAnimation>
-
-      {/* Testimonials Section */}
-      <ScrollAnimation direction="up" delay={0.6}>
-        <div className="w-full px-4 md:px-8 py-16 bg-gradient-to-br from-[#f8fafc]/80 to-[#f0f9ff]/80 backdrop-blur-sm relative overflow-hidden">
-          {/* Floating Hearts Background Animation */}
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <FloatingHearts />
-          </div>
-          <div className="max-w-6xl mx-auto relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#0833a8' }}>
-                What Our Patients Say
-              </h2>
-              <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-                Real experiences from our patients who have received care at Aram Medical Foundation
-              </p>
-            </div>
-
-            <div className="relative flex flex-col items-center">
-              <div className="w-full max-w-4xl"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-12 flex flex-col items-center min-h-[300px] transition-all duration-300">
-                  <div className="mb-6 text-center text-xl md:text-2xl font-medium leading-relaxed" style={{ color: '#0833a8' }}>
-                    "{testimonials[testimonialIdx].text}"
-                  </div>
-                  <div className="font-bold text-xl md:text-2xl mt-4" style={{ color: '#98C341' }}>
-                    {testimonials[testimonialIdx].name}
-                  </div>
-                  {testimonials[testimonialIdx].role && (
-                    <div className="text-lg text-gray-500 mt-2 font-medium">
-                      {testimonials[testimonialIdx].role}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Carousel Controls */}
-              <div className="flex items-center gap-4 mt-8">
-                <button 
-                  onClick={prevTestimonial} 
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg hover:bg-[#98C341] hover:text-white text-[#0833a8] transition-colors text-xl"
-                >
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                
-                {/* Dots */}
-                <div className="flex gap-3">
-                  {testimonials.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setTestimonialIdx(idx)}
-                      className={`w-4 h-4 rounded-full transition-colors ${
-                        testimonialIdx === idx ? 'bg-[#98C341]' : 'bg-gray-300'
-                      }`}
-                      aria-label={`Go to testimonial ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-                
-                <button 
-                  onClick={nextTestimonial} 
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-lg hover:bg-[#98C341] hover:text-white text-[#0833a8] transition-colors text-xl"
-                >
-                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="text-center mt-12">
-              <Link to="/contact">
-                <button className="bg-[#98C341] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#7a9f35] transition-colors">
-                  Book Your Appointment
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </ScrollAnimation>
+      
+      <Testimonials/>
 
       {/* Achievements Section */}
       <ScrollAnimation direction="up" delay={0.7}>
@@ -373,7 +297,7 @@ export default function HomePage() {
           </div>
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#0833a8' }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#212878' }}>
                 Our Achievements & Milestones
               </h2>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -384,42 +308,42 @@ export default function HomePage() {
             {/* Statistics Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <ScrollAnimation direction="up" delay={0.1} styleType="scale">
-                <div className="text-center p-6 bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] rounded-xl shadow-lg">
+                <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
                   <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaUsers className="text-2xl text-white" />
                   </div>
-                  <div className="text-3xl font-bold mb-2" style={{ color: '#0833a8' }}>5000+</div>
-                  <div className="text-sm font-medium text-gray-600">Happy Patients</div>
+                  <div className="text-3xl font-bold mb-2 text-white">5000+</div>
+                  <div className="text-sm font-medium text-white">Happy Patients</div>
                 </div>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.2} styleType="scale">
-                <div className="text-center p-6 bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] rounded-xl shadow-lg">
+                <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
                   <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaHeartbeat className="text-2xl text-white" />
                   </div>
-                  <div className="text-3xl font-bold mb-2" style={{ color: '#0833a8' }}>1000+</div>
-                  <div className="text-sm font-medium text-gray-600">Cardiac Procedures</div>
+                  <div className="text-3xl font-bold mb-2 text-white">1000+</div>
+                  <div className="text-sm font-medium text-white">Cardiac Procedures</div>
                 </div>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.3} styleType="scale">
-                <div className="text-center p-6 bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] rounded-xl shadow-lg">
+                <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
                   <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaClock className="text-2xl text-white" />
                   </div>
-                  <div className="text-3xl font-bold mb-2" style={{ color: '#0833a8' }}>10+</div>
-                  <div className="text-sm font-medium text-gray-600">Years of Service</div>
+                  <div className="text-3xl font-bold mb-2" style={{ color: 'white' }}>10+</div>
+                  <div className="text-sm font-medium text-white">Years of Service</div>
                 </div>
               </ScrollAnimation>
 
               <ScrollAnimation direction="up" delay={0.4} styleType="scale">
-                <div className="text-center p-6 bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] rounded-xl shadow-lg">
+                <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
                   <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaStar className="text-2xl text-white" />
                   </div>
-                  <div className="text-3xl font-bold mb-2" style={{ color: '#0833a8' }}>98%</div>
-                  <div className="text-sm font-medium text-gray-600">Patient Satisfaction</div>
+                  <div className="text-3xl font-bold mb-2 text-white">98%</div>
+                  <div className="text-sm font-medium text-white">Patient Satisfaction</div>
                 </div>
               </ScrollAnimation>
             </div>
@@ -427,27 +351,27 @@ export default function HomePage() {
             {/* Key Achievements */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <ScrollAnimation direction="left" delay={0.12} styleType="scale">
-                <div className="bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl p-8 shadow-lg">
+                <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center">
                       <FaAward className="text-xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold" style={{ color: '#0833a8' }}>Excellence in Cardiac Care</h3>
+                    <h3 className="text-xl font-bold text-white">Excellence in Cardiac Care</h3>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-white">
                     Recognized for outstanding cardiac care services with state-of-the-art diagnostic equipment and expert medical team. Our commitment to patient safety and quality care has earned us the trust of the community.
                   </p>
                 </div>
               </ScrollAnimation>
               <ScrollAnimation direction="right" delay={0.22} styleType="rotate">
-                <div className="bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl p-8 shadow-lg">
+                <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center">
                       <FaUserMd className="text-xl text-white" />
                     </div>
-                    <h3 className="text-xl font-bold" style={{ color: '#0833a8' }}>Expert Medical Team</h3>
+                    <h3 className="text-xl font-bold text-white">Expert Medical Team</h3>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed text-white">
                     Led by Dr. Ranganathan R RM, our team of experienced cardiologists and healthcare professionals provide comprehensive cardiac care with a patient-centric approach, ensuring the best outcomes for every patient.
                   </p>
                 </div>
@@ -455,16 +379,16 @@ export default function HomePage() {
             </div>
 
             {/* Milestones Timeline */}
-            <div className="bg-gradient-to-br from-[#f0f9ff] to-[#e0f2fe] rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-center mb-8" style={{ color: '#0833a8' }}>Our Journey</h3>
+            <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-center mb-8" style={{ color: '#212878' }}>Our Journey</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <ScrollAnimation direction="up" delay={0.13} styleType="scale">
                   <div className="text-center">
                                     <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2014</span>
                 </div>
-                    <h4 className="font-bold mb-2" style={{ color: '#0833a8' }}>Foundation Established</h4>
-                    <p className="text-sm text-gray-600">Aram Medical Foundation was established with a vision to provide comprehensive cardiac care</p>
+                    <h4 className="font-bold mb-2 text-white">Foundation Established</h4>
+                    <p className="text-sm text-white">Aram Medical Foundation was established with a vision to provide comprehensive cardiac care</p>
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation direction="down" delay={0.19} styleType="rotate">
@@ -472,8 +396,8 @@ export default function HomePage() {
                                     <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2018</span>
                 </div>
-                    <h4 className="font-bold mb-2" style={{ color: '#0833a8' }}>Advanced Equipment</h4>
-                    <p className="text-sm text-gray-600">Upgraded to state-of-the-art cardiac diagnostic and interventional equipment</p>
+                    <h4 className="font-bold mb-2 text-white">Advanced Equipment</h4>
+                    <p className="text-sm text-white">Upgraded to state-of-the-art cardiac diagnostic and interventional equipment</p>
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation direction="left" delay={0.27} styleType="scale">
@@ -481,8 +405,8 @@ export default function HomePage() {
                                     <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2024</span>
                 </div>
-                    <h4 className="font-bold mb-2" style={{ color: '#0833a8' }}>Community Trust</h4>
-                    <p className="text-sm text-gray-600">Became the trusted cardiac care center serving thousands of patients in Pollachi</p>
+                    <h4 className="font-bold mb-2 text-white">Community Trust</h4>
+                    <p className="text-sm text-white">Became the trusted cardiac care center serving thousands of patients in Pollachi</p>
                   </div>
                 </ScrollAnimation>
               </div>
@@ -491,9 +415,9 @@ export default function HomePage() {
             {/* Doctor's Achievements & Awards */}
             <ScrollAnimation direction="up" delay={0.6}>
               <div className="mt-12">
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                <div>
                   <ScrollAnimation direction="left" delay={0.1}>
-                    <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
                       <div className="flex-shrink-0">
                         <img
                           src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
@@ -502,7 +426,7 @@ export default function HomePage() {
                         />
                       </div>
                       <div className="text-center md:text-left">
-                        <h3 className="text-2xl font-bold mb-2" style={{ color: '#0833a8' }}>
+                        <h3 className="text-2xl font-bold mb-2" style={{ color: '#212878' }}>
                           Dr. Ranganathan R RM
                         </h3>
                         <p className="text-lg font-semibold text-[#98C341] mb-2">
@@ -518,8 +442,8 @@ export default function HomePage() {
                   <ScrollAnimation direction="up" delay={0.2}>
                     <div className="text-center mb-8">
                       <h4 className="text-3xl md:text-4xl font-bold mb-4">
-                        <span className="text-gray-800">DR. RANGANATHAN</span><br />
-                        <span style={{ color: '#98C341' }}>ACHIEVEMENTS</span>
+                        {/* <span className="text-gray-800">DR. RANGANATHAN</span><br /> */}
+                        <span style={{ color: '#212878' }}>ACHIEVEMENTS</span>
                       </h4>
                       <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                         Talk to our expert cardiologist about your heart health today. His credentials and achievements are well-documented:
@@ -756,7 +680,7 @@ export default function HomePage() {
                       Early intervention can lead to better HPV prevention. Talk to your gynaecologist about HPV vaccination and screening today.
                     </p>
                     <Link to="/contact">
-                      <button className="bg-[#1aab3c] text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#0833a8] transition-colors flex items-center gap-3">
+                      <button className="bg-[#1aab3c] text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#212878] transition-colors flex items-center gap-3">
                         Chat to book a free tele-consultation
                         <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -821,12 +745,12 @@ export default function HomePage() {
                     Frequently Asked Questions
                   </h3>
                   
-                  <div className="space-y-6">
+                  <div className="space-y-0">
                     {faqData.map((faq, index) => (
                       <ScrollAnimation key={index} direction="up" delay={0.4 + index * 0.1}>
-                        <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                        <div className="relative">
                           <div 
-                            className="p-6 cursor-pointer"
+                            className="py-6 cursor-pointer"
                             onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
                           >
                             <div className="flex items-center justify-between">
@@ -857,6 +781,10 @@ export default function HomePage() {
                               </p>
                             </div>
                           </div>
+                          {/* Horizontal line separator */}
+                          {index < faqData.length - 1 && (
+                            <div className="h-px bg-gray-300 w-full"></div>
+                          )}
                         </div>
                       </ScrollAnimation>
                     ))}
@@ -866,7 +794,7 @@ export default function HomePage() {
                   <ScrollAnimation direction="up" delay={0.8}>
                     <div className="text-center mt-12">
                       <Link to="/contact">
-                        <button className="bg-[#1aab3c] text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#0833a8] transition-colors flex items-center gap-3 mx-auto">
+                        <button className="bg-[#1aab3c] text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#212878] transition-colors flex items-center gap-3 mx-auto">
                           Go to FAQs
                           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -875,12 +803,14 @@ export default function HomePage() {
                       </Link>
                     </div>
                   </ScrollAnimation>
+                  
                 </div>
               </div>
             </ScrollAnimation>
           </div>
         </div>
       </ScrollAnimation>
+      
     </>
   );
 } 

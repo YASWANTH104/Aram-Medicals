@@ -73,8 +73,6 @@ const MedicalBackgroundGraphics = () => {
 export default function CardiacCareServices() {
   return (
     <>
-      {/* Medical Background Graphics */}
-      <MedicalBackgroundGraphics />
       
       <section className="relative w-full py-20 bg-white/70 backdrop-blur-sm overflow-x-hidden">
         {/* Floating Hearts Background Animation */}

@@ -175,8 +175,6 @@ const ContactUs = () => {
 
   return (
     <>
-      {/* Medical Background Graphics */}
-      <MedicalBackgroundGraphics />
       
       <div className="min-h-screen bg-white/70 backdrop-blur-sm pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-4 sm:pb-8 md:pb-12 lg:pb-16 relative overflow-hidden">
         {/* Floating Hearts Background Animation */}

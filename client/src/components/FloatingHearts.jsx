@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
-const FloatingHearts = ({ className = "", heartColor1 = "#1aab3c", heartColor2 = "#0833a8" }) => {
+const FloatingHearts = ({ className = "", heartColor1 = "#1aab3c", heartColor2 = "#212878" }) => {
   return (
     <>
       {/* Floating Hearts Background Animation */}
