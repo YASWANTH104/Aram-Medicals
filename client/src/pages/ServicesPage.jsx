@@ -4,6 +4,7 @@ import { FaHeartbeat, FaUserMd, FaLungs, FaBrain, FaStethoscope, FaHospitalAlt, 
 import ScrollAnimation from '../components/ScrollAnimation';
 import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
+import Footer from '../components/Footer';
 
 // Medical Background Graphics Component
 
@@ -12,47 +13,47 @@ import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
 const services = [
   {
     name: 'Cardic Care',
-    icon: <FaHeartbeat className="text-4xl text-[#98C341]" />,
+    icon: <FaHeartbeat className="text-4xl text-[#1aab3c]" />,
     desc: 'Comprehensive heart health diagnostics, treatment, and rehabilitation by expert cardiologists.',
     details: 'Our Cardiac Care department offers advanced diagnostics, interventional procedures, and rehabilitation for a wide range of heart conditions. Our team is led by experienced cardiologists and supported by state-of-the-art technology.'
   },
   {
     name: 'General Medicine',
-    icon: <FaStethoscope className="text-4xl text-[#98C341]" />,
+    icon: <FaStethoscope className="text-4xl text-[#1aab3c]" />,
     desc: 'Primary care, preventive medicine, and management of chronic diseases for all ages.',
     details: 'Our General Medicine team provides comprehensive care for acute and chronic illnesses, preventive health checkups, and ongoing management for all age groups.'
   },
   {
     name: 'Pulmonology',
-    icon: <FaLungs className="text-4xl text-[#98C341]" />,
+    icon: <FaLungs className="text-4xl text-[#1aab3c]" />,
     desc: 'Advanced care for respiratory and lung conditions, including asthma, COPD, and more.',
     details: 'Our Pulmonology department specializes in the diagnosis and treatment of respiratory diseases, including asthma, COPD, sleep disorders, and more.'
   },
   {
     name: 'Psychiatry',
-    icon: <FaBrain className="text-4xl text-[#98C341]" />,
+    icon: <FaBrain className="text-4xl text-[#1aab3c]" />,
     desc: 'Mental health support, counseling, and treatment for a range of psychiatric conditions.',
     details: 'Our Psychiatry team offers compassionate care for mental health, including counseling, therapy, and medication management for a variety of psychiatric conditions.'
   },
   {
     name: 'General Surgery',
-    icon: <FaHospitalAlt className="text-4xl text-[#98C341]" />,
+    icon: <FaHospitalAlt className="text-4xl text-[#1aab3c]" />,
     desc: 'Expert surgical care for a variety of conditions, with a focus on safety and recovery.',
     details: 'Our General Surgery department provides a wide range of surgical procedures, focusing on patient safety, minimally invasive techniques, and rapid recovery.'
   },
   {
     name: 'Specialist Consultations',
-    icon: <FaUserMd className="text-4xl text-[#98C341]" />,
+    icon: <FaUserMd className="text-4xl text-[#1aab3c]" />,
     desc: 'Access to a wide range of medical specialists for personalized, expert advice.',
     details: 'We offer consultations with specialists across various fields, ensuring you receive expert advice and personalized care for your health needs.'
   },
 ];
 
 const features = [
-  { icon: <FaStar className="text-2xl text-[#98C341]" />, label: 'Expert Doctors' },
-  { icon: <FaClock className="text-2xl text-[#98C341]" />, label: '24x7 Emergency Care' },
-  { icon: <FaUserShield className="text-2xl text-[#98C341]" />, label: 'Patient-Centric Approach' },
-  { icon: <FaHospitalAlt className="text-2xl text-[#98C341]" />, label: 'Modern Facilities' },
+  { icon: <FaStar className="text-2xl text-[#1aab3c]" />, label: 'Expert Doctors' },
+  { icon: <FaClock className="text-2xl text-[#1aab3c]" />, label: '24x7 Emergency Care' },
+  { icon: <FaUserShield className="text-2xl text-[#1aab3c]" />, label: 'Patient-Centric Approach' },
+  { icon: <FaHospitalAlt className="text-2xl text-[#1aab3c]" />, label: 'Modern Facilities' },
 ];
 
 export default function ServicesPage() {
@@ -85,9 +86,9 @@ export default function ServicesPage() {
     <>
       <div className="pt-28 pb-8 bg-white/70 backdrop-blur-sm min-h-[80vh] w-full relative overflow-hidden">
         {/* Floating Hearts Background Animation */}
-        <div className="absolute inset-0 pointer-events-none z-0">
+        {/* <div className="absolute inset-0 pointer-events-none z-0">
           <FloatingHearts />
-        </div>
+        </div> */}
         
         <div className="relative z-10">
           {/* Hero Section */}
@@ -103,18 +104,18 @@ export default function ServicesPage() {
         {services.map((service, idx) => (
           <ScrollAnimation key={service.name} direction="up" delay={0.15 + idx * 0.1}>
             <div
-              className="group bg-gradient-to-br from-[#f8fafc] to-[#e3f0ff] rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden"
+              className="group bg-[#212878] rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden"
             >
               <div className="mb-6 z-10">{service.icon}</div>
-              <h3 className="text-3xl font-bold mb-4" style={{ color: '#212878' }}>{service.name}</h3>
-              <p className="text-gray-700 mb-6 z-10 text-lg leading-relaxed">{service.desc}</p>
+              <h3 className="text-3xl font-bold mb-4" style={{ color: 'white' }}>{service.name}</h3>
+              <p className="text-white mb-6 z-10 text-lg leading-relaxed">{service.desc}</p>
               <div className="flex gap-3 mt-auto z-10">
                 <Link to="/contact">
-                  <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#98C341] text-white font-semibold shadow hover:bg-[#7a9f35] transition-colors text-lg">
+                  <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#1aab3c] text-white font-semibold shadow hover:bg-[#7a9f35] transition-colors text-lg">
                     Book Now <FaChevronRight />
                   </button>
                 </Link>
-                <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#98C341] text-[#98C341] font-semibold shadow hover:bg-[#7a9f35] hover:text-white transition-colors text-lg" onClick={(e) => {
+                <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-[#1aab3c] text-[#1aab3c] font-semibold shadow hover:bg-[#7a9f35] hover:text-white transition-colors text-lg" onClick={(e) => {
                   const rect = e.currentTarget.closest('.group').getBoundingClientRect();
                   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                   setModalPosition({
@@ -156,7 +157,7 @@ export default function ServicesPage() {
               <h3 className="text-4xl font-bold mb-4" style={{ color: '#212878' }}>{services[modalIdx].name}</h3>
               <p className="text-gray-700 text-lg leading-relaxed">{services[modalIdx].details}</p>
               <Link to="/contact">
-                <button className="inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors" style={{ backgroundColor: '#98C341', color: 'white' }}>Book Appointment</button>
+                <button className="inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors" style={{ backgroundColor: '#1aab3c', color: 'white' }}>Book Appointment</button>
               </Link>
             </div>
           </div>
@@ -246,59 +247,11 @@ export default function ServicesPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-[#212878] text-white rounded-2xl shadow-xl p-8">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-2">Contact Us for Cardiac Care</h3>
-              <p className="text-lg opacity-90">Get expert cardiac care at Aram Medical Foundation</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <FaHospitalAlt className="text-xl" />
-                </div>
-                <h4 className="font-semibold mb-2">Address</h4>
-                <p className="text-sm opacity-90">
-                  91, 91/1-91/4, New Scheme Road<br />
-                  Pollachi - 642 001
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <FaClock className="text-xl" />
-                </div>
-                <h4 className="font-semibold mb-2">Phone</h4>
-                <p className="text-sm opacity-90">
-                  <a href="tel:+918667411477" className="hover:underline">+91 86674 11477</a>
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <FaUserMd className="text-xl" />
-                </div>
-                <h4 className="font-semibold mb-2">Email</h4>
-                <p className="text-sm opacity-90">
-                  <a href="mailto:info@arammedicalfoundation.com" className="hover:underline">
-                    info@arammedicalfoundation.com
-                  </a>
-                </p>
-              </div>
-            </div>
-            
-            <div className="text-center mt-6">
-              <Link to="/contact">
-                <button className="bg-[#98C341] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a9f35] transition-colors">
-                  Book Cardiac Consultation
-                </button>
-              </Link>
-            </div>
-          </div>
         </div>
       </ScrollAnimation>
         </div>
       </div>
+      <Footer/>
     </>
   );
 } 

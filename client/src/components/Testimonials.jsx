@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import FloatingHearts from "./FloatingHearts"; // Assuming you have this component
 
 const testimonials = [
   {
@@ -39,7 +40,7 @@ export default function Testimonials() {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const cardWidth = scrollRef.current.firstChild.offsetWidth + 32; // card + gap
+      const cardWidth = scrollRef.current.firstChild.offsetWidth + 32;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth",
@@ -48,50 +49,65 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 bg-white w-full">
-      <div className="w-full px-6">
-        <h2 className="text-6xl font-bold text-center mb-10 text-[#212878]">
+    <section className="py-24 bg-gradient-to-b from-white to-[#f9fafb] relative">
+               <div className="absolute inset-0 pointer-events-none z-0">
+            <FloatingHearts />
+          </div>
+      <div className="w-full max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#212878]">
           Hear From Our <span className="text-[#98C341]">Patients</span>
         </h2>
 
-        {/* Slider Controls */}
-        <div className="flex justify-end mb-6 gap-4">
+        {/* Scroll Buttons - hidden on mobile */}
+        <div className="hidden md:block">
           <button
             onClick={() => scroll("left")}
-            className="p-4 rounded-full bg-[#98C341] hover:bg-gray-300"
+            className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-5 bg-[#212878] text-white rounded-full shadow-lg hover:scale-110 transition"
           >
-            <FaChevronLeft size={20} />
+            <FaChevronLeft size={22} />
           </button>
           <button
             onClick={() => scroll("right")}
-            className="p-4 rounded-full bg-[#98C341] text-white hover:bg-teal-700"
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-5 bg-[#98C341] text-white rounded-full shadow-lg hover:scale-110 transition"
           >
-            <FaChevronRight size={20} />
+            <FaChevronRight size={22} />
           </button>
         </div>
 
-        {/* Cards Row */}
+        {/* Cards */}
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-scroll scroll-smooth no-scrollbar px-6"
+          className="flex gap-10 overflow-x-scroll snap-x snap-mandatory no-scrollbar px-4"
         >
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[85%] md:w-[48%] lg:w-[48%] bg-gray-100 shadow-lg rounded-2xl p-8 hover:shadow-2xl transition min-h-[300px] lg:min-h-[380px]"
+              className="
+                flex-shrink-0 snap-center
+                w-[90%] sm:w-[70%] md:w-[45%] lg:w-[30%]
+                bg-white/80 backdrop-blur-md border border-gray-200 
+                shadow-lg hover:shadow-2xl rounded-2xl p-10 
+                hover:-translate-y-3 transition-all relative
+              "
             >
-              <div className="flex items-center gap-5 mb-6">
-                {/* Initial Avatar */}
-                <div className="w-16 h-16 rounded-full bg-[#98C341] flex items-center justify-center text-white text-2xl font-bold">
+              {/* Quote Icon Watermark */}
+              <FaQuoteLeft className="absolute top-6 left-6 text-[#98C341] text-5xl opacity-10" />
+
+              {/* Avatar + Info */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#98C341] to-[#6ca729] flex items-center justify-center text-white text-xl font-bold shadow-md">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-xl">{t.name}</h3>
+                  <h3 className="font-semibold text-lg text-[#212878]">{t.name}</h3>
                   <p className="text-sm text-gray-500">{t.role}</p>
                 </div>
               </div>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {t.feedback}
+
+              {/* Feedback */}
+              <p className="text-gray-700 text-base leading-relaxed italic">
+                “{t.feedback}”
               </p>
             </div>
           ))}

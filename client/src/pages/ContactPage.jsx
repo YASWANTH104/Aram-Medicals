@@ -155,7 +155,7 @@ const ContactUs = () => {
   const getFieldIcon = (fieldName) => {
     const status = getFieldStatus(fieldName);
     if (status === 'error') return <FaExclamationTriangle className="text-red-500" />;
-    if (status === 'success') return <FaCheck className="text-[#98C341]" />;
+    if (status === 'success') return <FaCheck className="text-[#1aab3c]" />;
     return null;
   };
 
@@ -167,7 +167,7 @@ const ContactUs = () => {
       case 'error':
         return `${baseClasses} border-red-300 focus:ring-red-500 bg-red-50`;
       case 'success':
-        return `${baseClasses} border-[#98C341] focus:ring-[#98C341] bg-green-50`;
+        return `${baseClasses} border-[#1aab3c] focus:ring-[#1aab3c] bg-green-50`;
       default:
         return `${baseClasses} border-gray-300 focus:ring-blue-500`;
     }
@@ -189,7 +189,7 @@ const ContactUs = () => {
               <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
                 <div className="text-center">
                   <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <FaCheck className="text-[#98C341] text-2xl" />
+                    <FaCheck className="text-[#1aab3c] text-2xl" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-green-800 mb-3">
                     Thank You!
@@ -201,22 +201,22 @@ const ContactUs = () => {
                     <p className="text-sm text-gray-600 mb-3 font-medium">What happens next?</p>
                     <ul className="text-sm text-gray-700 space-y-2 text-left">
                       <li className="flex items-center">
-                        <span className="w-2 h-2 bg-[#98C341] rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-[#1aab3c] rounded-full mr-3"></span>
                         We'll review your inquiry within 24 hours
                       </li>
                       <li className="flex items-center">
-                        <span className="w-2 h-2 bg-[#98C341] rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-[#1aab3c] rounded-full mr-3"></span>
                         Our medical team will contact you via phone or email
                       </li>
                       <li className="flex items-center">
-                        <span className="w-2 h-2 bg-[#98C341] rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-[#1aab3c] rounded-full mr-3"></span>
                         We'll schedule your appointment at your convenience
                       </li>
                     </ul>
                   </div>
                   <button
                     onClick={() => setSubmitSuccess(false)}
-                    className="w-full bg-[#98C341] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#7a9f35] transition-colors duration-200 text-lg"
+                    className="w-full bg-[#1aab3c] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#7a9f35] transition-colors duration-200 text-lg"
                   >
                     Got it!
                   </button>
@@ -488,7 +488,7 @@ const ContactUs = () => {
                       className={`w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-medium transition-all duration-200 focus:ring-2 focus:ring-offset-2 text-sm sm:text-base ${
                         isSubmitting 
                           ? 'bg-gray-400 cursor-not-allowed' 
-                          : 'bg-[#98C341] hover:bg-[#7a9f35] focus:ring-[#98C341]'
+                          : 'bg-[#1aab3c] hover:bg-[#7a9f35] focus:ring-[#1aab3c]'
                       } text-white`}
                     >
                       {isSubmitting ? (

@@ -9,6 +9,7 @@ export default function Navbar() {
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
     { to: '/services', label: 'Services' },
+    { to : '/facilities', label: 'Facilities'},
     { to: '/contact', label: 'Contact Us' },
   ];
 
@@ -25,7 +26,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className={`hover:text-[#1CA39E] ${location.pathname === link.to ? 'font-bold underline text-[#1aab3c]' : ''}`}
+              className={`hover:text-[#1aab3c] ${location.pathname === link.to ? 'font-bold underline text-[#1aab3c]' : ''}`}
             >
               {link.label}
             </Link>
@@ -33,7 +34,7 @@ export default function Navbar() {
         </div>
         {/* Chat Button (always visible) */}
         <Link to="/contact">
-          <button className="hidden md:inline-block bg-[#0B3A4A] text-white px-6 py-2 rounded font-semibold text-lg shadow hover:bg-[#17677c] ml-4 transition-colors duration-200">Book Appointment</button>
+          <button className="hidden md:inline-block bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-lg shadow hover:bg-[#17677c] ml-4 transition-colors duration-200">Book Appointment</button>
         </Link>
         {/* Hamburger Menu (mobile, rightmost) */}
         <button
@@ -53,14 +54,14 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className={`block py-2 hover:text-[#1CA39E] ${location.pathname === link.to ? 'font-bold underline text-[#1aab3c]' : ''}`}
+              className={`block py-2 hover:text-[#1aab3c] ${location.pathname === link.to ? 'font-bold underline text-[#1aab3c]' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
           <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="w-full mt-2 bg-[#0B3A4A] text-white px-6 py-2 rounded font-semibold text-base shadow hover:bg-[#17677c] transition-colors duration-200">Book Appointment</button>
+            <button className="w-full mt-2 bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-base shadow hover:bg-[#1aab3c] transition-colors duration-200">Book Appointment</button>
           </Link>
         </div>
       )}

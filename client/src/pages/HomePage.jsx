@@ -5,6 +5,9 @@ import ScrollAnimation from '../components/ScrollAnimation';
 import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
 import Testimonials from '../components/Testimonials';
+import Footer from '../components/Footer';
+import VirusModel from '../components/VirusModel';
+import VirusModel2 from '../components/VirusModel2';
 
 // Medical Background Graphics Component
 
@@ -93,7 +96,7 @@ export default function HomePage() {
           {/* You can use a background SVG or pattern here for the wavy lines */}
         </div>
         {/* Left: Button, Heading and Description */}
-        <div className="relative z-10 flex-1 max-w-xl mb-12 md:mb-0">
+        <div className="relative z-10 flex-1 max-w-3xl mb-12 md:mb-0">
           <ScrollAnimation direction="up" delay={0.1}>
             <Link to="/about">
               <button className="group border-2 border-[#222] text-[#222] px-8 py-3 rounded-full text-lg font-semibold flex items-center gap-2 transition-colors duration-200 hover:bg-[#222] hover:text-white focus:outline-none mb-8">
@@ -122,9 +125,14 @@ export default function HomePage() {
           </ScrollAnimation>
         </div>
         {/* Right: Vision and Mission Polygons */}
-        <ScrollAnimation direction="right" delay={0.4}>
+          <ScrollAnimation direction="right" styleType="scale">
+              <div className="flex justify-center lg:justify-end">
+                  <VirusModel2 className="w-full h-80" />
+              </div>
+          </ScrollAnimation>
+        {/*<ScrollAnimation direction="right" delay={0.4}>
           <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 flex-1 justify-end w-full md:w-auto">
-            {/* Vision Polygon */}
+            {/* Vision Polygon }
             <div className="bg-[#A3C86D] text-[#2B2B4B] shadow-lg px-6 py-6 md:py-8 md:px-8 w-full md:w-80 clip-polygon-green mb-4 md:mb-0">
               <h3 className="font-bold text-xl mb-3 flex items-center gap-2">
                 <span className="inline-block w-5 h-5 bg-[#2B2B4B] rounded-full mr-3" />
@@ -134,7 +142,7 @@ export default function HomePage() {
                 Aram Medical Foundation focusses on Comprehensive Heart Health Care with state-of-the-art non invasive Cardiac Diagnostic Equipment. Our values center around an ethical and patient-centric approach. We also have a vision for the future with special emphasis on preventive and rehabilitative Cardiac care.
               </p>
             </div>
-            {/* Mission Polygon */}
+            {/* Mission Polygon }
             <div className="bg-white text-[#2B2B4B] shadow-lg px-6 py-6 md:py-8 md:px-8 w-full md:w-80 clip-polygon-white border border-gray-200">
               <h3 className="font-bold text-xl mb-3 flex items-center gap-2">
                 <span className="inline-block w-5 h-5 bg-[#2B2B4B] rounded-full mr-3" />
@@ -145,7 +153,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </ScrollAnimation>
+        </ScrollAnimation>*/}
         {/* Custom polygon clip-paths for the cards */}
         <style>{`
           .clip-polygon-green {
@@ -174,23 +182,23 @@ export default function HomePage() {
                 <ScrollAnimation direction="up" delay={0.2}>
                   <div className="flex flex-wrap justify-center gap-8 mb-12">
                     <div className="flex items-center gap-3">
-                      <FaHeartbeat className="w-5 h-5 text-[#98C341]" />
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Heart Failure</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <FaHeartbeat className="w-5 h-5 text-[#98C341]" />
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Cardiac Arrest</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <FaHeartbeat className="w-5 h-5 text-[#98C341]" />
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Stroke</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <FaHeartbeat className="w-5 h-5 text-[#98C341]" />
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Kidney Disease</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <FaHeartbeat className="w-5 h-5 text-[#98C341]" />
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Peripheral Artery Disease</span>
                     </div>
                   </div>
@@ -205,11 +213,11 @@ export default function HomePage() {
                 {/* Protect */}
                 <ScrollAnimation direction="left" delay={0.3}>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center flex-shrink-0">
                       <FaHeartbeat className="text-xl text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#98C341' }}>Protect</h3>
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#1aab3c' }}>Protect</h3>
                       <p className="text-gray-700 leading-relaxed text-lg">
                         Cardiac care can act as the body's frontline defence, shielding it from heart disease and other associated conditions through early detection and preventive measures.
                       </p>
@@ -220,11 +228,11 @@ export default function HomePage() {
                 {/* Equip */}
                 <ScrollAnimation direction="left" delay={0.4}>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center flex-shrink-0">
                       <FaUserMd className="text-xl text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#98C341' }}>Equip</h3>
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#1aab3c' }}>Equip</h3>
                       <p className="text-gray-700 leading-relaxed text-lg">
                         As per studies, early cardiac screening and preventive care before the onset of heart disease can help provide a high protection rate of more than 90% against serious cardiac events.
                       </p>
@@ -235,11 +243,11 @@ export default function HomePage() {
                 {/* Guard Against */}
                 <ScrollAnimation direction="left" delay={0.5}>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center flex-shrink-0">
                       <FaStar className="text-xl text-white" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#98C341' }}>Guard Against</h3>
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#1aab3c' }}>Guard Against</h3>
                       <p className="text-gray-700 leading-relaxed text-lg">
                         Cardiac care and lifestyle modifications have been demonstrated to help reduce the risk of heart attacks, strokes, and other cardiovascular diseases by up to 80%-90% when implemented early.
                       </p>
@@ -270,7 +278,7 @@ export default function HomePage() {
                   Ask your cardiologist for comprehensive heart care.
                 </h3>
                 <Link to="/contact">
-                  <button className="bg-[#98C341] text-white px-10 py-4 rounded-lg font-semibold text-xl shadow-lg hover:bg-[#7a9f35] transition-colors flex items-center gap-2 mx-auto">
+                  <button className="bg-[#1aab3c] text-white px-10 py-4 rounded-lg font-semibold text-xl shadow-lg hover:bg-[#7a9f35] transition-colors flex items-center gap-2 mx-auto">
                     Book Consultation
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -309,7 +317,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <ScrollAnimation direction="up" delay={0.1} styleType="scale">
                 <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
-                  <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaUsers className="text-2xl text-white" />
                   </div>
                   <div className="text-3xl font-bold mb-2 text-white">5000+</div>
@@ -319,7 +327,7 @@ export default function HomePage() {
 
               <ScrollAnimation direction="up" delay={0.2} styleType="scale">
                 <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
-                  <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaHeartbeat className="text-2xl text-white" />
                   </div>
                   <div className="text-3xl font-bold mb-2 text-white">1000+</div>
@@ -329,7 +337,7 @@ export default function HomePage() {
 
               <ScrollAnimation direction="up" delay={0.3} styleType="scale">
                 <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
-                  <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaClock className="text-2xl text-white" />
                   </div>
                   <div className="text-3xl font-bold mb-2" style={{ color: 'white' }}>10+</div>
@@ -339,7 +347,7 @@ export default function HomePage() {
 
               <ScrollAnimation direction="up" delay={0.4} styleType="scale">
                 <div className="text-center p-6 bg-[#212878] rounded-xl shadow-lg">
-                  <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaStar className="text-2xl text-white" />
                   </div>
                   <div className="text-3xl font-bold mb-2 text-white">98%</div>
@@ -353,7 +361,7 @@ export default function HomePage() {
               <ScrollAnimation direction="left" delay={0.12} styleType="scale">
                 <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center">
                       <FaAward className="text-xl text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white">Excellence in Cardiac Care</h3>
@@ -366,7 +374,7 @@ export default function HomePage() {
               <ScrollAnimation direction="right" delay={0.22} styleType="rotate">
                 <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center">
                       <FaUserMd className="text-xl text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-white">Expert Medical Team</h3>
@@ -384,7 +392,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <ScrollAnimation direction="up" delay={0.13} styleType="scale">
                   <div className="text-center">
-                                    <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2014</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Foundation Established</h4>
@@ -393,7 +401,7 @@ export default function HomePage() {
                 </ScrollAnimation>
                 <ScrollAnimation direction="down" delay={0.19} styleType="rotate">
                   <div className="text-center">
-                                    <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2018</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Advanced Equipment</h4>
@@ -402,7 +410,7 @@ export default function HomePage() {
                 </ScrollAnimation>
                 <ScrollAnimation direction="left" delay={0.27} styleType="scale">
                   <div className="text-center">
-                                    <div className="w-16 h-16 bg-[#98C341] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-xl font-bold text-white">2024</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Community Trust</h4>
@@ -422,14 +430,14 @@ export default function HomePage() {
                         <img
                           src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
                           alt="Dr. Ranganathan R RM"
-                          className="w-32 h-32 rounded-full object-cover border-4 border-[#98C341] shadow-md"
+                          className="w-32 h-32 rounded-full object-cover border-4 border-[#1aab3c] shadow-md"
                         />
                       </div>
                       <div className="text-center md:text-left">
                         <h3 className="text-2xl font-bold mb-2" style={{ color: '#212878' }}>
                           Dr. Ranganathan R RM
                         </h3>
-                        <p className="text-lg font-semibold text-[#98C341] mb-2">
+                        <p className="text-lg font-semibold text-[#1aab3c] mb-2">
                           MD (Gen Med), DM (Cardiology)
                         </p>
                         <p className="text-gray-700">
@@ -458,7 +466,7 @@ export default function HomePage() {
                       <div className="relative">
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
                         <div className="pl-6">
-                          <h5 className="text-xl font-bold mb-4" style={{ color: '#98C341' }}>Academic Excellence</h5>
+                          <h5 className="text-xl font-bold mb-4" style={{ color: '#1aab3c' }}>Academic Excellence</h5>
                           <div className="space-y-3 text-gray-700">
                             <p className="text-sm leading-relaxed">
                               <strong>Gold Medallist Ophthalmology</strong> - Secured highest marks in ophthalmology during medical studies
@@ -476,7 +484,7 @@ export default function HomePage() {
                       <div className="relative">
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
                         <div className="pl-6">
-                          <h5 className="text-xl font-bold mb-4" style={{ color: '#98C341' }}>Cardiology Expertise</h5>
+                          <h5 className="text-xl font-bold mb-4" style={{ color: '#1aab3c' }}>Cardiology Expertise</h5>
                           <div className="space-y-3 text-gray-700">
                             <p className="text-sm leading-relaxed">
                               <strong>Shri. B. Nagi Reddi Memorial Gold Medical</strong> - D.M Cardiology excellence award
@@ -494,7 +502,7 @@ export default function HomePage() {
                       <div className="relative">
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
                         <div className="pl-6">
-                          <h5 className="text-xl font-bold mb-4" style={{ color: '#98C341' }}>Research & Innovation</h5>
+                          <h5 className="text-xl font-bold mb-4" style={{ color: '#1aab3c' }}>Research & Innovation</h5>
                           <div className="space-y-3 text-gray-700">
                             <p className="text-sm leading-relaxed">
                               <strong>Dr Muthulakshmi Reddy Grant Award</strong> - Best Research Activity for Role of Plasma 11-6
@@ -512,7 +520,7 @@ export default function HomePage() {
                   <ScrollAnimation direction="up" delay={0.6}>
                     <div className="text-center mt-12">
                                         <Link to="/contact">
-                    <button className="bg-[#98C341] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#7a9f35] transition-colors">
+                    <button className="bg-[#1aab3c] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#7a9f35] transition-colors">
                       Book Cardiac Consultation
                     </button>
                   </Link>
@@ -690,30 +698,37 @@ export default function HomePage() {
                   </div>
                 </div>
               </ScrollAnimation>
+              {/* Right: 3D Virus Model */}
+              <ScrollAnimation direction="right" delay={0.2} styleType="scale">
+                <div className="flex justify-center lg:justify-end">
+                  <VirusModel className="w-full h-80" />
+                </div>
+              </ScrollAnimation>
 
-              {/* Right: Professional Colorful Heart Graphic */}
+
+              {/* Right: Professional Colorful Heart Graphic }
               <ScrollAnimation direction="right" delay={0.2} styleType="scale">
                 <div className="flex justify-center lg:justify-end">
                   <div className="relative">
-                    {/* Main Heart Container */}
+                    {/* Main Heart Container }
                     <div className="w-80 h-80 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-full flex items-center justify-center shadow-2xl border-4 border-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
-                      {/* Central Heart */}
+                      {/* Central Heart }
                       <div className="relative flex items-center justify-center">
                         <FaHeartbeat className="text-9xl text-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-pulse" />
                         
-                        {/* Colorful Pulse Rings - Perfectly Centered */}
+                        {/* Colorful Pulse Rings - Perfectly Centered }
                         <div className="absolute w-40 h-40 border-4 border-blue-400 rounded-full animate-ping opacity-30"></div>
                         <div className="absolute w-40 h-40 border-4 border-purple-400 rounded-full animate-ping opacity-25" style={{animationDelay: '0.3s'}}></div>
                         <div className="absolute w-40 h-40 border-4 border-pink-400 rounded-full animate-ping opacity-20" style={{animationDelay: '0.6s'}}></div>
                       </div>
                       
-                      {/* Medical Cross */}
+                      {/* Medical Cross }
                       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-gradient-to-r from-blue-500 to-purple-500">
                         <div className="w-10 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                         <div className="absolute w-1 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                       </div>
                       
-                      {/* Floating Medical Elements */}
+                      {/* Floating Medical Elements }
                       <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                         <FaHeartbeat className="text-white text-lg" />
                       </div>
@@ -728,13 +743,13 @@ export default function HomePage() {
                       </div>
                     </div>
                     
-                    {/* Background Decorative Elements */}
+                    {/* Background Decorative Elements }
                     <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-cyan-300 to-cyan-500 rounded-full opacity-60"></div>
                     <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-br from-violet-300 to-violet-500 rounded-full opacity-60"></div>
                     <div className="absolute top-1/4 -right-8 w-4 h-4 bg-gradient-to-br from-rose-300 to-rose-500 rounded-full opacity-60"></div>
                   </div>
                 </div>
-              </ScrollAnimation>
+              </ScrollAnimation>*/}
             </div>
 
             {/* FAQs Section */}
@@ -810,7 +825,7 @@ export default function HomePage() {
           </div>
         </div>
       </ScrollAnimation>
-      
+      <Footer/>
     </>
   );
 } 

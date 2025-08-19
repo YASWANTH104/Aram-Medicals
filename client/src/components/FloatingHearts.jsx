@@ -1,245 +1,122 @@
-import React from 'react';
-import { FaHeartbeat } from 'react-icons/fa';
+import React, { useMemo, useEffect, useRef } from "react";
 
-const FloatingHearts = ({ className = "", heartColor1 = "#1aab3c", heartColor2 = "#212878" }) => {
+const FloatingHearts = ({
+  count = 40,
+  className = "",
+  colors = ["#1aab3c55", "#21287855", "#ffffff33"],
+}) => {
+  const containerRef = useRef(null);
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: count }).map(() => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: 5 + Math.random() * 20,
+        duration: 20 + Math.random() * 25,
+        delay: -Math.random() * 20,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        opacity: 0.1 + Math.random() * 0.4,
+      })),
+    [count, colors]
+  );
+
+  // Mouse parallax only on desktop
+  useEffect(() => {
+    if (window.innerWidth < 768) return; // disable on mobile
+    const handleMouseMove = (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 20;
+      const y = (e.clientY / innerHeight - 0.5) * 20;
+      if (containerRef.current) {
+        containerRef.current.style.setProperty("--mouse-x", `${x}px`);
+        containerRef.current.style.setProperty("--mouse-y", `${y}px`);
+      }
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
-    <>
-      {/* Floating Hearts Background Animation */}
-      <div className={`absolute inset-0 pointer-events-none z-0 ${className}`}>
-        <div className="floating-heart heart-1">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-20`} />
-        </div>
-        <div className="floating-heart heart-2">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-15`} />
-        </div>
-        <div className="floating-heart heart-3">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-25`} />
-        </div>
-        <div className="floating-heart heart-4">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-10`} />
-        </div>
-        <div className="floating-heart heart-5">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-20`} />
-        </div>
-        <div className="floating-heart heart-6">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-15`} />
-        </div>
-        <div className="floating-heart heart-7">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-18`} />
-        </div>
-        <div className="floating-heart heart-8">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-12`} />
-        </div>
-        <div className="floating-heart heart-9">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-22`} />
-        </div>
-        <div className="floating-heart heart-10">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-16`} />
-        </div>
-        <div className="floating-heart heart-11">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-14`} />
-        </div>
-        <div className="floating-heart heart-12">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-19`} />
-        </div>
-        <div className="floating-heart heart-13">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-17`} />
-        </div>
-        <div className="floating-heart heart-14">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-13`} />
-        </div>
-        <div className="floating-heart heart-15">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-21`} />
-        </div>
-        <div className="floating-heart heart-16">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-11`} />
-        </div>
-        <div className="floating-heart heart-17">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-19`} />
-        </div>
-        <div className="floating-heart heart-18">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-18`} />
-        </div>
-        <div className="floating-heart heart-19">
-          <FaHeartbeat className={`text-[${heartColor1}] opacity-16`} />
-        </div>
-        <div className="floating-heart heart-20">
-          <FaHeartbeat className={`text-[${heartColor2}] opacity-20`} />
-        </div>
-      </div>
+    <div
+      ref={containerRef}
+      className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}
+      style={{ "--mouse-x": "0px", "--mouse-y": "0px" }}
+    >
+      {/* Gradient Blobs */}
+      <div className="blob blob-1" />
+      <div className="blob blob-2" />
+      <div className="blob blob-3" />
 
-      {/* Floating Hearts CSS Animations */}
+      {/* Floating Particles */}
+      {particles.map((p, i) => (
+        <div
+          key={i}
+          className="particle"
+          style={{
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            background: p.color,
+            opacity: p.opacity,
+            animation: `floatPremium ${p.duration}s ease-in-out infinite`,
+            animationDelay: `${p.delay}s`,
+          }}
+        />
+      ))}
+
       <style>{`
-        .floating-heart {
+        .particle {
           position: absolute;
-          font-size: 1.5rem;
-          animation: float 15s infinite linear;
+          border-radius: 50%;
+          filter: blur(3px);
+          transform: translate(var(--mouse-x), var(--mouse-y));
         }
-        
-        .heart-1 {
-          top: 10%;
-          left: 10%;
-          animation-delay: 0s;
-          animation-duration: 20s;
+
+        /* Gradient blobs */
+        .blob {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(120px);
+          opacity: 0.6;
+          animation: blobMove 30s ease-in-out infinite alternate, blobColor 20s ease-in-out infinite alternate;
         }
-        
-        .heart-2 {
-          top: 20%;
-          right: 15%;
-          animation-delay: -5s;
-          animation-duration: 25s;
+
+        .blob-1 { width: 400px; height: 400px; top: 10%; left: 5%; background: radial-gradient(circle, #1aab3c88, #1aab3c22); }
+        .blob-2 { width: 500px; height: 500px; top: 50%; left: 40%; background: radial-gradient(circle, #21287888, #21287822); }
+        .blob-3 { width: 300px; height: 300px; top: 70%; left: 70%; background: radial-gradient(circle, #ffffff55, #ffffff11); }
+
+        @keyframes blobMove {
+          0% { transform: translate(0px, 0px) scale(1); }
+          25% { transform: translate(40px, -20px) scale(1.1); }
+          50% { transform: translate(-30px, 30px) scale(1.05); }
+          75% { transform: translate(20px, -10px) scale(0.95); }
+          100% { transform: translate(-10px, 40px) scale(1); }
         }
-        
-        .heart-3 {
-          top: 60%;
-          left: 5%;
-          animation-delay: -10s;
-          animation-duration: 18s;
+
+        @keyframes blobColor {
+          0% { background: radial-gradient(circle, #1aab3c88, #1aab3c22); }
+          33% { background: radial-gradient(circle, #21287888, #21287822); }
+          66% { background: radial-gradient(circle, #ffffff55, #ffffff11); }
+          100% { background: radial-gradient(circle, #1aab3c88, #1aab3c22); }
         }
-        
-        .heart-4 {
-          top: 30%;
-          right: 5%;
-          animation-delay: -15s;
-          animation-duration: 22s;
+
+        @keyframes floatPremium {
+          0% { transform: translateY(0px) scale(1); opacity: 0; }
+          10% { opacity: 1; }
+          50% { transform: translateY(-60px) scale(1.2); }
+          100% { transform: translateY(-120px) scale(1); opacity: 0; }
         }
-        
-        .heart-5 {
-          top: 70%;
-          right: 10%;
-          animation-delay: -8s;
-          animation-duration: 30s;
-        }
-        
-        .heart-6 {
-          top: 80%;
-          left: 20%;
-          animation-delay: -12s;
-          animation-duration: 16s;
-        }
-        
-        .heart-7 {
-          top: 15%;
-          left: 60%;
-          animation-delay: -3s;
-          animation-duration: 28s;
-        }
-        
-        .heart-8 {
-          top: 45%;
-          right: 25%;
-          animation-delay: -7s;
-          animation-duration: 19s;
-        }
-        
-        .heart-9 {
-          top: 75%;
-          left: 40%;
-          animation-delay: -14s;
-          animation-duration: 24s;
-        }
-        
-        .heart-10 {
-          top: 25%;
-          left: 80%;
-          animation-delay: -9s;
-          animation-duration: 21s;
-        }
-        
-        .heart-11 {
-          top: 55%;
-          right: 35%;
-          animation-delay: -6s;
-          animation-duration: 26s;
-        }
-        
-        .heart-12 {
-          top: 85%;
-          right: 20%;
-          animation-delay: -11s;
-          animation-duration: 17s;
-        }
-        
-        .heart-13 {
-          top: 40%;
-          left: 30%;
-          animation-delay: -13s;
-          animation-duration: 23s;
-        }
-        .heart-14 {
-          top: 65%;
-          right: 30%;
-          animation-delay: -16s;
-          animation-duration: 20s;
-        }
-        .heart-15 {
-          top: 35%;
-          left: 75%;
-          animation-delay: -18s;
-          animation-duration: 27s;
-        }
-        .heart-16 {
-          top: 60%;
-          right: 60%;
-          animation-delay: -19s;
-          animation-duration: 22s;
-        }
-        .heart-17 {
-          top: 50%;
-          left: 55%;
-          animation-delay: -15s;
-          animation-duration: 29s;
-        }
-        .heart-18 {
-          top: 80%;
-          right: 40%;
-          animation-delay: -17s;
-          animation-duration: 18s;
-        }
-        .heart-19 {
-          top: 20%;
-          left: 90%;
-          animation-delay: -20s;
-          animation-duration: 25s;
-        }
-        .heart-20 {
-          top: 90%;
-          right: 10%;
-          animation-delay: -21s;
-          animation-duration: 24s;
-        }
-        
-        @keyframes float {
-          0% {
-            transform: translate(0, 0) rotate(0deg);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translate(100px, -100px) rotate(360deg);
-            opacity: 0;
-          }
-        }
-        
-        /* Parallax effect on scroll */
-        .floating-heart {
-          will-change: transform;
-        }
-        
-        /* Responsive adjustments */
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
-          .floating-heart {
-            font-size: 1rem;
-          }
+          .blob { width: 200px; height: 200px; filter: blur(80px); }
+          .particle { width: 4px !important; height: 4px !important; transform: none !important; }
         }
       `}</style>
-    </>
+    </div>
   );
 };
 
-export default FloatingHearts; 
+export default FloatingHearts;

@@ -5,6 +5,7 @@ import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
 import ScrollAnimation from '../components/ScrollAnimation';
 import Testimonials from '../components/Testimonials';
+import Footer from '../components/Footer';
 
 const testimonials = [
   {
@@ -58,9 +59,9 @@ export default function AboutPage() {
       
       <div className="pt-28 pb-16 px-4 md:px-8 bg-white/70 backdrop-blur-sm min-h-[80vh] relative overflow-hidden">
         {/* Floating Hearts Background Animation */}
-        <div className="absolute inset-0 pointer-events-none z-0">
+        {/* <div className="absolute inset-0 pointer-events-none z-0">
           <FloatingHearts />
-        </div>
+        </div> */}
         
         <div className="relative z-10">
           {/* Hero Section */}
@@ -69,23 +70,23 @@ export default function AboutPage() {
               <img
                 src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
                 alt="Dr. Ranganathan R RM"
-                className="w-40 h-40 rounded-full object-cover border-4 border-[#98C341] shadow-md mb-6 md:mb-0"
+                className="w-40 h-40 rounded-full object-cover border-4 border-[#1aab3c] shadow-md mb-6 md:mb-0"
               />
               <div className="flex-1">
                 <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#212878' }}>Dr. Ranganathan R RM</h1>
-                <div className="font-semibold mb-3 text-xl" style={{ color: '#98C341' }}>MD (Gen Med), DM (Cardio)</div>
+                <div className="font-semibold mb-3 text-xl" style={{ color: '#1aab3c' }}>MD (Gen Med), DM (Cardio)</div>
                 <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                  Welcome to <span style={{ color: '#98C341', fontWeight: 600 }}>Aram Medical Foundation</span>, your trusted center for comprehensive cardiac care in Pollachi. Our mission is to provide ethical, patient-centric, and world-class healthcare to the community.
+                  Welcome to <span style={{ color: '#1aab3c', fontWeight: 600 }}>Aram Medical Foundation</span>, your trusted center for comprehensive cardiac care in Pollachi. Our mission is to provide ethical, patient-centric, and world-class healthcare to the community.
                 </p>
                 <div className="flex flex-col gap-3 text-lg text-gray-700">
                   <div>
                     <span className="font-semibold" style={{ color: '#212878' }}>Address:</span> 91,91/1-91/4, New Scheme Road, Pollachi - 642 001
                   </div>
                   <div>
-                    <span className="font-semibold" style={{ color: '#212878' }}>Phone:</span> <a href="tel:966741147" style={{ color: '#98C341' }} className="hover:underline">96674 1147</a>
+                    <span className="font-semibold" style={{ color: '#212878' }}>Phone:</span> <a href="tel:966741147" style={{ color: '#1aab3c' }} className="hover:underline">96674 1147</a>
                   </div>
                   <div>
-                    <span className="font-semibold" style={{ color: '#212878' }}>Email:</span> <a href="mailto:info@arammedicalfoundation.com" style={{ color: '#98C341' }} className="hover:underline">info@arammedicalfoundation.com</a>
+                    <span className="font-semibold" style={{ color: '#212878' }}>Email:</span> <a href="mailto:info@arammedicalfoundation.com" style={{ color: '#1aab3c' }} className="hover:underline">info@arammedicalfoundation.com</a>
                   </div>
                 </div>
               </div>
@@ -122,21 +123,21 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold mb-6" style={{ color: '#212878' }}>Professional Achievements</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center text-white font-bold">15+</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">15+</div>
                     <div>
                       <div className="font-semibold text-lg">Years of Experience</div>
                       <div className="text-gray-600">Dedicated cardiac care</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center text-white font-bold">5000+</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">5000+</div>
                     <div>
                       <div className="font-semibold text-lg">Patients Treated</div>
                       <div className="text-gray-600">Successful procedures</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#98C341] rounded-full flex items-center justify-center text-white font-bold">24/7</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">24/7</div>
                     <div>
                       <div className="font-semibold text-lg">Emergency Care</div>
                       <div className="text-gray-600">Always available</div>
@@ -155,19 +156,19 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             {/* Hero Section with Dynamic Background */}
             <div className="relative mb-16">
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#212878]/10 to-[#98C341]/10 rounded-3xl transform rotate-1"></div> */}
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#212878]/10 to-[#1aab3c]/10 rounded-3xl transform rotate-1"></div> */}
               {/* <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl p-12 md:p-16 shadow-2xl"> */}
                 <div className="text-center">
                   <div className="inline-flex items-center gap-3 mb-6">
-                    <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#98C341]"></div>
-                    <span className="text-[#98C341] font-semibold text-lg uppercase tracking-wider">Our Journey</span>
-                    <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#98C341]"></div>
+                    <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#1aab3c]"></div>
+                    <span className="text-[#1aab3c] font-semibold text-lg uppercase tracking-wider">Our Journey</span>
+                    <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#1aab3c]"></div>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#212878] to-[#212878] bg-clip-text text-transparent">
                     Our Story & Mission
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                    <span className="font-semibold" style={{ color: '#98C341' }}>Aram Medical Foundation</span> was established with a vision to provide accessible, high-quality cardiac care to the people of Pollachi and surrounding regions.
+                    <span className="font-semibold" style={{ color: '#1aab3c' }}>Aram Medical Foundation</span> was established with a vision to provide accessible, high-quality cardiac care to the people of Pollachi and surrounding regions.
                   </p>
                 </div>
               {/* </div> */}
@@ -176,7 +177,7 @@ export default function AboutPage() {
             {/* Core Values with Enhanced Animations */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="group bg-white p-8 rounded-2xl shadow-lg text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#98C341] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1aab3c] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                   <svg className="w-10 h-10 text-white transform transition-all duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -186,7 +187,7 @@ export default function AboutPage() {
               </div>
               
               <div className="group bg-white p-8 rounded-2xl shadow-lg text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#98C341] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1aab3c] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
                   <svg className="w-10 h-10 text-white transform transition-all duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -196,7 +197,7 @@ export default function AboutPage() {
               </div>
               
               <div className="group bg-white p-8 rounded-2xl shadow-lg text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-gray-100">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#98C341] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#1aab3c] to-[#7a9f35] rounded-full flex items-center justify-center mx-auto mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                   <svg className="w-10 h-10 text-white transform transition-all duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -208,12 +209,12 @@ export default function AboutPage() {
 
             {/* Mission & Vision with Dynamic Layout */}
             <div className="relative">
-              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#212878]/5 to-[#98C341]/5 rounded-3xl transform -rotate-1"></div> */}
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#212878]/5 to-[#1aab3c]/5 rounded-3xl transform -rotate-1"></div> */}
               <div className="relative bg-[#212878] rounded-3xl p-12 md:p-16 shadow-xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                   <div className="group">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#98C341] to-[#7a9f35] rounded-full flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#1aab3c] to-[#7a9f35] rounded-full flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -227,7 +228,7 @@ export default function AboutPage() {
                   
                   <div className="group">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#98C341] to-[#7a9f35] rounded-full flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#1aab3c] to-[#7a9f35] rounded-full flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -242,9 +243,9 @@ export default function AboutPage() {
                 </div>
                 
                 {/* Decorative Elements */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-[#98C341]/20 rounded-full"></div>
+                <div className="absolute top-4 right-4 w-8 h-8 bg-[#1aab3c]/20 rounded-full"></div>
                 <div className="absolute bottom-4 left-4 w-6 h-6 bg-[#212878]/20 rounded-full"></div>
-                <div className="absolute top-1/2 left-4 w-4 h-4 bg-[#98C341]/30 rounded-full"></div>
+                <div className="absolute top-1/2 left-4 w-4 h-4 bg-[#1aab3c]/30 rounded-full"></div>
               </div>
             </div>
           </div>
@@ -257,27 +258,27 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ color: '#212878' }}>Comprehensive Cardiac Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Cardiac Diagnostics</h3>
                 <p className="text-gray-700">Advanced diagnostic procedures including ECG, Echo, Stress Test, and Holter monitoring.</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Interventional Cardiology</h3>
                 <p className="text-gray-700">Angioplasty, Stenting, and other minimally invasive cardiac procedures.</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Emergency Care</h3>
                 <p className="text-gray-700">24/7 emergency cardiac services for heart attacks and acute conditions.</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Preventive Cardiology</h3>
                 <p className="text-gray-700">Risk assessment, lifestyle counseling, and preventive care for heart health.</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Cardiac Rehabilitation</h3>
                 <p className="text-gray-700">Comprehensive rehabilitation programs for post-cardiac procedure recovery.</p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#98C341]">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#1aab3c]">
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#212878' }}>Patient Education</h3>
                 <p className="text-gray-700">Educational programs to help patients understand and manage their heart health.</p>
               </div>
@@ -382,12 +383,13 @@ export default function AboutPage() {
       <ScrollAnimation direction="up" delay={0.8}>
         <div className="max-w-2xl mx-auto text-center mt-16">
           <Link to="/contact">
-            <button className="bg-[#98C341] text-white inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors">Book an Appointment</button>
+            <button className="bg-[#1aab3c] text-white inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors">Book an Appointment</button>
           </Link>
         </div>
       </ScrollAnimation>
         </div>
       </div>
+      <Footer/>
     </>
   );
 } 
