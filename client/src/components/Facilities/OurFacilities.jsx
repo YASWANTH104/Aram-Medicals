@@ -2,14 +2,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ScrollAnimation from "../ScrollAnimation";
+import img1 from "../../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg";
+import img4 from "../../assets/img4.jpg";
+import img5 from "../../assets/img5.jpg";
+import img6 from "../../assets/img6.jpg";
 
 export default function OurFacilities() {
   const images = [
-    "https://www.onehealthhospitals.com/wp-content/uploads/2024/03/OHSSH-Facilities-6-scaled.webp",
-    "https://www.onehealthhospitals.com/wp-content/uploads/2024/03/OHSSH-Facilities-2-768x511.webp",
-    "https://www.onehealthhospitals.com/wp-content/uploads/2024/03/OHSSH-Facilities-6-scaled.webp",
-    "https://www.onehealthhospitals.com/wp-content/uploads/2024/03/OHSSH-Facilities-2-768x511.webp",
-    "https://www.onehealthhospitals.com/wp-content/uploads/2024/03/OHSSH-Facilities-6-scaled.webp",
+    img1,
+    img6,
+    img2,
+    img4,
+    img5, 
   ];
 
   return (
@@ -19,7 +24,7 @@ export default function OurFacilities() {
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-extrabold">
           <span className="text-[#1aab3c]">Facilities</span>{" "}
-          <span className="text-[#0B3A4A]">at OneHealth</span>
+          <span className="text-[#0B3A4A]">at Aram Medicals</span>
         </h1>
       </div>
       </ScrollAnimation>

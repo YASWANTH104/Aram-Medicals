@@ -278,7 +278,7 @@ export default function HomePage() {
                   Ask your cardiologist for comprehensive heart care.
                 </h3>
                 <Link to="/contact">
-                  <button className="bg-[#1aab3c] text-white px-10 py-4 rounded-lg font-semibold text-xl shadow-lg hover:bg-[#7a9f35] transition-colors flex items-center gap-2 mx-auto">
+                  <button className="bg-[#1aab3c] text-white px-10 py-4 rounded-lg font-semibold text-xl shadow-lg hover:bg-[#212878] transition-colors flex items-center gap-2 mx-auto">
                     Book Consultation
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -388,7 +388,7 @@ export default function HomePage() {
 
             {/* Milestones Timeline */}
             <div className="bg-[#212878] rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-center mb-8" style={{ color: '#212878' }}>Our Journey</h3>
+              <h3 className="text-2xl font-bold text-center mb-8" style={{ color: 'white' }}>Our Journey</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <ScrollAnimation direction="up" delay={0.13} styleType="scale">
                   <div className="text-center">
@@ -520,7 +520,7 @@ export default function HomePage() {
                   <ScrollAnimation direction="up" delay={0.6}>
                     <div className="text-center mt-12">
                                         <Link to="/contact">
-                    <button className="bg-[#1aab3c] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#7a9f35] transition-colors">
+                    <button className="bg-[#1aab3c] text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#212878] transition-colors">
                       Book Cardiac Consultation
                     </button>
                   </Link>

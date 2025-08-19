@@ -6,7 +6,7 @@ export default function Recognition() {
       },
       {
         img: "https://www.onehealthhospitals.com/wp-content/uploads/2024/11/international-patient-service.jpg",
-        text: "City's Best Hospital Award by Insurance Alerts",
+        text: "One of City's Best Hospital Award by Insurance Alerts",
       },
       {
         img: "https://www.onehealthhospitals.com/wp-content/uploads/2024/11/international-patient-service.jpg",
@@ -24,11 +24,12 @@ export default function Recognition() {
   
     return (
       <section className="px-6 py-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-10 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#212878] mb-10 text-center">
           Recognition
         </h2>
   
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> */}
+        <div className="flex flex-wrap justify-center gap-10 lg:max-w-7xl lg:mx-auto">
           {awards.map((award, idx) => (
             <div
               key={idx}
@@ -42,7 +43,7 @@ export default function Recognition() {
               />
   
               {/* Caption */}
-              <div className="bg-blue-600 text-white text-base md:text-lg font-semibold text-center px-6 py-4">
+              <div className="bg-blue-600 text-white text-base md:text-lg font-semibold text-center px-6 py-4 h-full">
                 {award.text}
               </div>
             </div>

@@ -44,13 +44,13 @@ export default function Footer() {
       </div>
     </div>
     
-    <div className="text-center mt-6">
+    {/* <div className="text-center mt-6">
       <Link to="/contact">
         <button className="bg-[#1aab3c] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a9f35] transition-colors">
           Book Cardiac Consultation
         </button>
       </Link>
-    </div>
+    </div> */}
   </div>
   );
 }

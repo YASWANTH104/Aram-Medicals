@@ -383,7 +383,7 @@ export default function AboutPage() {
       <ScrollAnimation direction="up" delay={0.8}>
         <div className="max-w-2xl mx-auto text-center mt-16">
           <Link to="/contact">
-            <button className="bg-[#1aab3c] text-white inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#7a9f35] hover:text-white transition-colors">Book an Appointment</button>
+            <button className="bg-[#1aab3c] text-white inline-block font-semibold px-8 py-3 rounded-lg text-lg shadow hover:bg-[#212878] hover:text-white transition-colors">Book an Appointment</button>
           </Link>
         </div>
       </ScrollAnimation>

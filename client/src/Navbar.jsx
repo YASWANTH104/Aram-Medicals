@@ -34,7 +34,7 @@ export default function Navbar() {
         </div>
         {/* Chat Button (always visible) */}
         <Link to="/contact">
-          <button className="hidden md:inline-block bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-lg shadow hover:bg-[#17677c] ml-4 transition-colors duration-200">Book Appointment</button>
+          <button className="hidden md:inline-block bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-lg shadow hover:bg-[#212878] ml-4 transition-colors duration-200">Book Appointment</button>
         </Link>
         {/* Hamburger Menu (mobile, rightmost) */}
         <button
@@ -61,7 +61,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="w-full mt-2 bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-base shadow hover:bg-[#1aab3c] transition-colors duration-200">Book Appointment</button>
+            <button className="w-full mt-2 bg-[#1aab3c] text-white px-6 py-2 rounded font-semibold text-base shadow hover:bg-[#212878] transition-colors duration-200">Book Appointment</button>
           </Link>
         </div>
       )}
