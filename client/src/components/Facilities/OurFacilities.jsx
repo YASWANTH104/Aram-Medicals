@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import ScrollAnimation from "../ScrollAnimation";
 
 export default function OurFacilities() {
   const images = [
@@ -14,14 +15,26 @@ export default function OurFacilities() {
   return (
     <div className="pt-24 pb-12 px-6 md:px-12 lg:px-20 bg-white">
       {/* Heading */}
+      <ScrollAnimation direction="up" delay={0.2}>
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-extrabold">
           <span className="text-[#1aab3c]">Facilities</span>{" "}
           <span className="text-[#0B3A4A]">at OneHealth</span>
         </h1>
       </div>
+      </ScrollAnimation>
 
       {/* Carousel */}
+      <ScrollAnimation direction="up" delay={0.3}>
+      <div className="max-w-6xl mx-auto">
+        <p className="text-center text-lg md:text-xl mb-8">
+          Explore our state-of-the-art facilities designed for your health and comfort.
+        </p>
+      </div>
+      </ScrollAnimation>
+      
+      {/* Swiper Carousel */}
+      <ScrollAnimation direction="up" delay={0.4}>  
       <Swiper
         modules={[Autoplay]}
         spaceBetween={20}
@@ -44,6 +57,7 @@ export default function OurFacilities() {
           </SwiperSlide>
         ))}
       </Swiper>
+      </ScrollAnimation>
     </div>
   );
 }

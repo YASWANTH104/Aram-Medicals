@@ -32,7 +32,7 @@ function Virus() {
   return <primitive ref={ref} object={clonedScene} scale={2} />;
 }
 
-export default function VirusModel2({ width = 600, height = 600 }) {
+export default function VirusModel2({ width = 500, height = 400 }) {
   return (
     <div style={{ width, height }}>
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
