@@ -7,14 +7,17 @@ import img2 from "../../assets/img2.jpg";
 import img4 from "../../assets/img4.jpg";
 import img5 from "../../assets/img5.jpg";
 import img6 from "../../assets/img6.jpg";
+import img8 from '../../assets/img8.jpg';
+import img9 from '../../assets/img9.jpg';
+import img10 from '../../assets/img10.jpg';
 
 export default function OurFacilities() {
   const images = [
     img1,
-    img6,
     img2,
     img4,
     img5, 
+    img6,img8,img9,img10
   ];
 
   return (

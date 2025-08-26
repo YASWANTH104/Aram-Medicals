@@ -2,28 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import FloatingHearts from '../components/FloatingHearts';
-import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
 import ScrollAnimation from '../components/ScrollAnimation';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
-
-const testimonials = [
-  {
-    name: 'Indirani',
-    text: 'Doctor, we are very grateful for your service. Genuine concern for your patients is appreciated during this difficult phase in our life.',
-    role: 'Patient - Underwent Stenting',
-  },
-  {
-    name: 'Arumugam',
-    text: 'I am very happy to have found such a wonderful doctor in my hometown. I have been under your follow up for 2 years now and I should say apart from the medications whenever I come and meet you in the hospital I get a sense of happiness and fulfilment. May you grow great heights and serve this community like this forever.',
-    role: '',
-  },
-  {
-    name: 'Ramathal',
-    text: 'ஒவ்வொரு முறையும் நாம் கேட்கும் எல்லா சந்தேகங்களையும் பொறுமையாக தீர்த்து வைக்கும் மருத்துவரை நான் பார்த்ததே இல்லை. உங்களுக்கும் உங்கள் குடும்பத்தினருக்கும் நல்ல ஆரோக்கியத்தையும் மகிழ்ச்சியையும் வாழ்த்துகிறோம்.',
-    role: '',
-  },
-];
+import AwardsSection from '../components/About/AwardsSection';
 
 const galleryImages = [
   'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3243-2048x1365.jpg',
@@ -37,31 +19,14 @@ const galleryImages = [
 
 
 export default function AboutPage() {
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
-  const total = testimonials.length;
-  const [isHovered, setIsHovered] = useState(false);
-  const timerRef = useRef();
-
-  const prevTestimonial = () => setTestimonialIdx((testimonialIdx - 1 + total) % total);
-  const nextTestimonial = () => setTestimonialIdx((testimonialIdx + 1) % total);
-
-  useEffect(() => {
-    if (!isHovered) {
-      timerRef.current = setTimeout(() => {
-        setTestimonialIdx((idx) => (idx + 1) % total);
-      }, 4000);
-    }
-    return () => clearTimeout(timerRef.current);
-  }, [testimonialIdx, isHovered, total]);
-
   return (
     <>
       
       <div className="pt-28 pb-16 px-4 md:px-8 bg-white/70 backdrop-blur-sm min-h-[80vh] relative overflow-hidden">
         {/* Floating Hearts Background Animation */}
-        {/* <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 pointer-events-none z-0">
           <FloatingHearts />
-        </div> */}
+        </div>
         
         <div className="relative z-10">
           {/* Hero Section */}
@@ -286,68 +251,9 @@ export default function AboutPage() {
           </div>
         </div>
       </ScrollAnimation>
+      
 
-      {/* Contact Information Section */}
-      {/* <ScrollAnimation direction="up" delay={0.5}>
-        <div className="w-full mb-16 px-4 md:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-[#212878] to-[#1aab3c] rounded-2xl p-8 md:p-12 text-white">
-              <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-semibold">Phone</div>
-                      <a href="tel:966741147" className="hover:underline">96674 11477</a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-semibold">Email</div>
-                      <a href="mailto:info@arammedicalfoundation.com" className="hover:underline">info@arammedicalfoundation.com</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold mb-4">Location</h3>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mt-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-semibold">Address</div>
-                      <div>91,91/1-91/4, New Scheme Road, Pollachi - 642 001</div>
-                      <a href="https://goo.gl/maps/8Qw8Qw8Qw8Qw8Qw8Q" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:underline mt-2 inline-block">Get Directions</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center mt-8">
-                <Link to="/contact">
-                  <button className="bg-white text-[#212878] px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition-colors">
-                    Book an Appointment
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ScrollAnimation> */}
-
+      <AwardsSection/>
       {/* Testimonials Carousel */}
       <Testimonials/>
 

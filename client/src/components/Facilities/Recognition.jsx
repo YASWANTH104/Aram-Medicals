@@ -43,7 +43,7 @@ export default function Recognition() {
               />
   
               {/* Caption */}
-              <div className="bg-blue-600 text-white text-base md:text-lg font-semibold text-center px-6 py-4 h-full">
+              <div className="bg-[#212878] text-white text-base md:text-lg font-semibold text-center px-6 py-4 h-full">
                 {award.text}
               </div>
             </div>

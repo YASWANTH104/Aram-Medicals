@@ -57,12 +57,6 @@ export default function BlogsPage() {
         <p className="mt-3 text-gray-600 text-lg">
           Discover articles, stories, and insights from our community ✨
         </p>
-        <button
-          onClick={() => navigate("/add-blog")}
-          className="mt-6 bg-[#1aab3c] hover:bg-[#212878] text-white px-6 py-3 rounded-xl shadow-lg transition duration-200"
-        >
-          Add Blog
-        </button>
       </div>
 
       {/* Loader */}

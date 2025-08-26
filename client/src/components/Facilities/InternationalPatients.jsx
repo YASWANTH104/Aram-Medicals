@@ -17,26 +17,12 @@ export default function InternationalPatientsCentre() {
         <ScrollAnimation direction="up" delay={0.4}>
         {/* Heading + CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <h2 className="leading-[1.05] tracking-tight font-extrabold">
+          <h2 className="leading-[1.05] font-bold text-4xl md:text-6xl text-[#212878]">
             {/* Outlined line */}
-            <span
-              className="block text-[56px] md:text-[80px]"
-              style={{
-                color: "transparent",
-                WebkitTextStroke: "3px #212878",        // Chrome/Safari/Edge
-                textShadow: `
-                  1px 0 0 #212878, -1px 0 0 #212878,
-                  0 1px 0 #212878, 0 -1px 0 #212878,
-                  1px 1px 0 #1e73be, -1px -1px 0 #1e73be,
-                  1px -1px 0 #1e73be, -1px 1px 0 #1aab3c
-                `,                                      // Firefox fallback
-              }}
-            >
               International
-            </span>
 
             {/* Solid line */}
-            <span className="block text-4xl md:text-6xl text-[#0B3A4A]">
+            <span className="block text-3xl md:text-4xl text-[#0B3A4A]">
               Patients Centre
             </span>
           </h2>
@@ -44,7 +30,7 @@ export default function InternationalPatientsCentre() {
           {/* CTA button */}
           <button
             type="button"
-            className="group inline-flex items-center gap-3 self-start rounded-full bg-gradient-to-r from-[#1e73be] to-[#0B3A4A] px-7 py-4 text-lg text-white font-semibold shadow-lg transition-colors hover:from-[#2a86d8] hover:to-[#159a34]"
+            className="group inline-flex items-center gap-3 self-start rounded-full bg-gradient-to-r from-[#1aab3c] to-[#212878] px-7 py-4 text-lg text-white font-semibold shadow-lg transition-colors hover:from-[#212878] hover:to-[#1aab3c]"
           >
             <span>Learn More</span>
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0B3A4A] group-hover:text-[#159a34] shadow-sm">

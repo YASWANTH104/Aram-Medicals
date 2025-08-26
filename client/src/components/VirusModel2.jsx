@@ -1,51 +1,62 @@
 // VirusModel2.jsx
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
-import { useRef, useEffect } from "react";
-import * as THREE from "three";
+import { useRef, useState, useEffect } from "react";
 
-function Virus() {
-  const { scene } = useGLTF("/virus.glb");
+function Stethoscope({ scale, position }) {
+  const { scene } = useGLTF("/doctors_stethoscope.glb");
   const ref = useRef();
-
-  // Clone scene so cache is not mutated
-  const clonedScene = scene.clone(true);
-
-  useEffect(() => {
-    clonedScene.traverse((child) => {
-      if (child.isMesh) {
-        child.material = new THREE.MeshStandardMaterial({
-          color: "#1aab3c",
-          roughness: 0.5,
-          metalness: 0.3,
-        });
-      }
-    });
-  }, [clonedScene]);
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.003;
+      ref.current.rotation.y += 0.07; // smooth rotation
     }
   });
 
-  return <primitive ref={ref} object={clonedScene} scale={2} />;
+  return <primitive ref={ref} object={scene} scale={scale} position={position} />;
 }
 
-export default function VirusModel2({ width = 500, height = 400 }) {
+export default function VirusModel2() {
+  const [scale, setScale] = useState(1.0);
+  const [position, setPosition] = useState([0, -0.3, 0]);
+  const [dimensions, setDimensions] = useState({
+    width: 500,
+    height: 400,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        // ✅ Large screens (desktop)
+        setScale(0.9);               // decreased from 1.2 → fits better
+        setPosition([0.3, -0.3, 0]); // slight shift right & down for alignment
+        setDimensions({ width: 700, height: 500 });
+      } else {
+        // ✅ Mobile / tablet (unchanged)
+        setScale(0.9);
+        setPosition([0, -0.3, 0]);
+        setDimensions({ width: 500, height: 400 });
+      }
+    };
+
+    handleResize(); // run once
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div style={{ width, height }}>
+    <div style={{ width: dimensions.width, height: dimensions.height, margin: "0 auto" }}>
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={1.2} />
-        <spotLight position={[-5, -5, -5]} intensity={0.5} />
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} />
+        <spotLight position={[-5, -5, -5]} intensity={0.7} />
+
         <Environment preset="sunset" />
-        <Virus />
+        <Stethoscope scale={scale} position={position} />
         <OrbitControls enableZoom={false} />
       </Canvas>
     </div>
   );
 }
 
-// Preload ensures it stays available after reloads
-useGLTF.preload("/virus.glb");
+useGLTF.preload("/doctors_stethoscope.glb");
