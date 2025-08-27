@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import FloatingHearts from '../components/FloatingHearts';
 import ScrollAnimation from '../components/ScrollAnimation';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/Testimonials/Testimonials';
 import Footer from '../components/Footer';
 import AwardsSection from '../components/About/AwardsSection';
 

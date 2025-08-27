@@ -4,7 +4,8 @@ import { FaHeartbeat, FaUserMd, FaAward, FaUsers, FaClock, FaStar, FaCross } fro
 import ScrollAnimation from '../components/ScrollAnimation';
 import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
-import Testimonials from '../components/Testimonials';
+// import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/Testimonials/Testimonials.jsx';
 import Footer from '../components/Footer';
 import VirusModel from '../components/VirusModel';
 import VirusModel2 from '../components/VirusModel2';
@@ -164,7 +165,7 @@ export default function HomePage() {
           }
         `}</style>
       </div>
-      <ScrollAnimation direction="up" delay={0.5}>
+      <ScrollAnimation direction="up" delay={0.2}>
         {/* Cardiac Prevention & Care Section */}
         <div className="w-full px-4 md:px-8 py-16 bg-white/75 backdrop-blur-sm relative overflow-hidden">
           {/* Floating Hearts Background Animation */}
@@ -297,7 +298,7 @@ export default function HomePage() {
       <Testimonials/>
 
       {/* Achievements Section */}
-      <ScrollAnimation direction="up" delay={0.7}>
+      <ScrollAnimation direction="up" delay={0.2}>
         <div className="w-full px-4 md:px-8 py-16 bg-white/75 backdrop-blur-sm relative overflow-hidden">
           {/* Floating Hearts Background Animation */}
           <div className="absolute inset-0 pointer-events-none z-0">
@@ -421,7 +422,7 @@ export default function HomePage() {
             </div>
 
             {/* Doctor's Achievements & Awards */}
-            <ScrollAnimation direction="up" delay={0.6}>
+            <ScrollAnimation direction="up" delay={0.2}>
               <div className="mt-12">
                 <div>
                   <ScrollAnimation direction="left" delay={0.1}>
@@ -534,7 +535,7 @@ export default function HomePage() {
       </ScrollAnimation>
 
       {/* HPV Prevention Section - Content Only */}
-      <ScrollAnimation direction="up" delay={0.8}>
+      <ScrollAnimation direction="up" delay={0.2}>
         <div className="w-full bg-white/75 backdrop-blur-sm py-16 relative overflow-hidden">
           {/* Floating Hearts Background Animation */}
           <div className="absolute inset-0 pointer-events-none z-0">
@@ -661,7 +662,7 @@ export default function HomePage() {
       </ScrollAnimation>
 
       {/* HPV Prevention & FAQs Section */}
-      <ScrollAnimation direction="up" delay={0.9}>
+      <ScrollAnimation direction="up" delay={0.2}>
         <div className="w-full bg-white/75 backdrop-blur-sm py-16 relative overflow-hidden">
           {/* Floating Hearts Background Animation */}
           <div className="absolute inset-0 pointer-events-none z-0">

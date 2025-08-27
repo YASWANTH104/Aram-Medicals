@@ -86,9 +86,9 @@ export default function ServicesPage() {
     <>
       <div className="pt-28 pb-8 bg-white/70 backdrop-blur-sm min-h-[80vh] w-full relative overflow-hidden">
         {/* Floating Hearts Background Animation */}
-        {/* <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 pointer-events-none z-0">
           <FloatingHearts />
-        </div> */}
+        </div>
         
         <div className="relative z-10">
           {/* Hero Section */}
