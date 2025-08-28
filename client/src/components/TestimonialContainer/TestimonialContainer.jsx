@@ -21,34 +21,16 @@ const defaultSettings = {
   arrows: false,
   responsive: [
     {
-      breakpoint: 1024, // ✅ cover most mobile devices with wide resolution
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "30px", // adjust padding for better look
-      },
-    },
-    {
-      breakpoint: 768, // tablets and smaller
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "20px",
-      },
-    },
-    {
-      breakpoint: 480, // very small devices
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false, // full width
+        centerPadding: "40px",
       },
     },
   ],
 };
-
 
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
   const settings = { ...defaultSettings, ...sliderSettings };
@@ -68,11 +50,11 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
 
           <div className="testimonial-profile">
             <div className="img-container">
-              {testimonial.image?<img
+              <img
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="testimonial-image"
-              />:<div className="testimonial-fallback">{testimonial.name.charAt(0).toUpperCase()}</div>}
+              />
             </div>
             <h3 className="testimonial-name">{testimonial.name}</h3>
             <span className="testimonial-position">

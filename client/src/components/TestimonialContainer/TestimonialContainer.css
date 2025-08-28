@@ -47,7 +47,7 @@
 }
 
 .quote-icon {
-    color: #212878;
+    color: #000000;
     transition: color 0.3s ease;
 }
 
@@ -111,7 +111,6 @@
     justify-content: center;
     margin-bottom: 10px;
     overflow: hidden;
-    background-color: #1aab3c;
 }
 
 .testimonial-image {
@@ -265,10 +264,4 @@
     .testimonial-position {
         font-size: 0.75rem;
     }
-}
-
-.testimonial-fallback{
-    color:white;
-    font-weight:600;
-    font-size:20px;
 }
