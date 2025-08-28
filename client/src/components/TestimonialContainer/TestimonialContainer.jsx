@@ -21,16 +21,34 @@ const defaultSettings = {
   arrows: false,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 1024, // ✅ cover most mobile devices with wide resolution
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "40px",
+        centerPadding: "30px", // adjust padding for better look
+      },
+    },
+    {
+      breakpoint: 768, // tablets and smaller
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "20px",
+      },
+    },
+    {
+      breakpoint: 480, // very small devices
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false, // full width
       },
     },
   ],
 };
+
 
 const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
   const settings = { ...defaultSettings, ...sliderSettings };
