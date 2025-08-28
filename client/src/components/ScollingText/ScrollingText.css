@@ -1,0 +1,187 @@
+/* Root Color Variables for Light and Dark Mode */
+:root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: #ffffff;
+    --foreground-light: #ededed;
+  }
+}
+
+
+/* Font Import */
+@font-face {
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne.ttf') format('truetype');
+  font-weight: 400;
+  /* Regular */
+  font-style: normal;
+}
+
+/* Scrolling Text Component Styles */
+
+.scrolling-text-container {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-light);
+  /* Optional background */
+  color: var(--background-dark);
+  margin-top: 40px;
+}
+
+.dark-mode .scrolling-text-container {
+  background-color: var(--background-dark);
+}
+
+.scrolling-text {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+
+}
+
+.scroll-right,
+.scroll-left {
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: none;
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Ensures infinite scrolling */
+  color: #000000;
+}
+
+.dark-mode .scroll-right {
+  color: #ffffff;
+}
+
+.dark-mode .scroll-left {
+  color: #ffffff
+}
+
+.scroll-right {
+  animation: scrollRight 1000s linear infinite;
+  animation-delay: 3s;
+
+}
+
+
+/* Left-scrolling text */
+.scroll-left {
+  animation: scrollLeft 1000s linear infinite;
+  animation-delay: 3s;
+  /* Delay before the animation starts */
+}
+
+/* Keyframes for left-scrolling text */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* Scroll out of view to the left */
+  }
+}
+
+
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width: 1250) {
+
+  .scroll-right,
+  .scroll-left {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width:768px) {
+
+  .scroll-right,
+  .scroll-left {
+    font-size: 4rem;
+  }
+
+  .scrolling-text-container {
+    height: 45vh;
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .scroll-right,
+  .scroll-left {
+    font-size: 2.5rem;
+  }
+
+  .scrolling-text-container {
+    height: 30vh;
+  }
+
+
+}
+
+
+.scrolling-text-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Glowing Circle */
+.glowing-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(110, 110, 109, 0.7), rgba(150, 150, 150, 0.3));
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+  transition: transform 0.1s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+
+.scrolling-text-container:hover .glowing-circle {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 480px) {
+  .scrolling-text-container:hover .glowing-circle {
+    opacity: 0 !important;
+  }
+}

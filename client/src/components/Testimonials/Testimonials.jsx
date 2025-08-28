@@ -1,57 +1,91 @@
 "use client";
-import FloatingHearts from "../FloatingHearts";
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import ScrollingText from "../ScollingText/ScrollingText.jsx";
 import "./Testimonials.css";
+import { useRef } from "react";
+import ScrollFromLeft from "../ScrollFromLeft";
+import ScrollRevealText from "../ScrollRevealText";
 import TestimonialContainer from "../TestimonialContainer/TestimonialContainer";
+import ScrollFromRight from "../ScrollFromRight";
 
 const testimonials = [
   {
-    name: "Indirani",
-    position: "Patient - Underwent Stenting",
-    text:
-      "Doctor, we are very grateful for your service. Genuine concern for your patients is appreciated during this difficult phase in our life.",
-    image:''
+    name: "Melissa Hurtado",
+    text: "Rukshana of Sabeena Digital Media Services showcases exceptional skills in social media management, storytelling, and content creation. Her positive energy and dedication to excellence make every collaboration a delight.",
+    position: "Property Manager, Self employed",
+    image: "./images/MelissaHurta.jpeg",
   },
   {
-    name: "Arumugam",
-    position: "Patient",
-    text:
-      "I am very happy to have found such a wonderful doctor in my hometown.Whenever I come and meet you in the hospital I get a sense of happiness and fulfilment. May you grow great heights and serve this community like this forever.",
-    image:''
+    name: "Mariel McCann",
+    text: "Rukshana is a creative and talented social media manager who helped Shooting Stars Foundation with impactful content. Her patience and attention to feedback make her an integral part of our digital strategy.",
+    position: "Shooting Stars (Former) Senior Program Manager",
+    image: "./images/Mariel.jpeg",
   },
   {
-    name: "Ramathal",
-    position: "Patient",
-    text:
-      "ஒவ்வொரு முறையும் நாம் கேட்கும் எல்லா சந்தேகங்களையும் பொறுமையாக தீர்த்து வைக்கும் மருத்துவரை நான் பார்த்ததே இல்லை. உங்களுக்கும் உங்கள் குடும்பத்தினருக்கும் நல்ல ஆரோக்கியத்தையும் மகிழ்ச்சியையும் வாழ்த்துகிறோம்.",
-    image:''
+    name: "Vidhya",
+    text: "Rukshana was instrumental in driving marketing efforts for our Learning Series at Right Dots. Her creativity, professionalism, and dedication significantly contributed to our success.",
+    position: "Founder, Right Dots",
+    image: "./images/vidhya.jpg",
   },
   {
-    name: "Lakshmi",
-    position: "Patient",
-    text:
-      "The care and compassion shown throughout my treatment was beyond my expectations. I feel healthier and more confident now.",
-    image:''
+    name: "Shivaranjani",
+    text: "Rukshana crafts high-impact content that inspires and engages. Her passion and professionalism make her a reliable choice for quality content delivered on time.",
+    position: "Volunteer, Government School",
+    image: "./images/shivaranjani.jpeg",
   },
   {
-    name: "Ravi Kumar",
-    position: "Patient - Angioplasty",
-    text:
-      "Thanks to the doctor’s timely diagnosis and treatment, I am able to get back to my normal routine much faster than expected.",
-    image:''
+    name: "Chitra Shah",
+    text: "SDMS transformed complex data into clear, engaging designs for our annual report and brochure. Rukshana’s creativity and attention to detail exceeded our expectations.",
+    position: "Director, Satya Special School",
+    image: "./images/chitra.jpg",
+  },
+  {
+    name: "Ratna Singh",
+    text: "Sabeena Digital Media Services has been a game-changer for Earth Safety Valve, managing events, social media, and impactful content with unmatched creativity and professionalism.",
+    position: "Founder, Earth Safety Valve",
+    image: "./images/ratna.jpeg",
+  },
+  {
+    name: "Dnc Teja",
+    text: "Working with SDMS felt like collaborating with a trusted friend. They understood my vision and delivered results that exceeded expectations with creativity and care.",
+    position: "Director, Proven Group of Companies",
+    image: "./images/teja.jpg",
+  },
+  {
+    name: "Mohamed Misfer",
+    text: "Rukshana's website development service boosted my business by providing customers with all the necessary details online, reducing inquiry calls and increasing sales-ready leads.",
+    position: "Founder, Misfer Media",
+    image: "./images/misfer.jpeg",
+  },
+  {
+    name: "Nitin JBS",
+    text: "I appreciate SDMS for organizing Creatathon for a Cause, inspiring students to showcase their talents and fostering creativity through thoughtful planning and collaboration.",
+    position: "Product Manager @ Way.com | Volunteer",
+    image: "./images/nitin.jpeg",
   },
 ];
 
 const Testimonials = () => {
   return (
     <div className="testimonials-container" id="testimonials">
-                <div className="absolute inset-0 pointer-events-none z-0">
-            <FloatingHearts />
-          </div>
       <div className="testimonials-heading-main">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#212878]">
-          Hear From Our <span className="text-[#98C341]">Patients</span>
-        </h2>
+        <ScrollFromLeft>
+          <ScrollRevealText>
+            <h2 className="testimonials-heading">
+              <span>partner's</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromLeft>
+
+        <ScrollFromRight>
+          <ScrollRevealText>
+            <h2 className="testimonials-heading">
+              <span>view</span>
+            </h2>
+          </ScrollRevealText>
+        </ScrollFromRight>
       </div>
 
       <div className="testimonials-section-content">
