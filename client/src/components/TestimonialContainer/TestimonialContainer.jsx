@@ -50,13 +50,11 @@ const TestimonialContainer = ({ testimonials = [], sliderSettings = {} }) => {
 
           <div className="testimonial-profile">
             <div className="img-container">
-               {testimonial.image ? (
-  <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
-) : (
-  <div className="testimonial-fallback">
-    {testimonial.name.charAt(0).toUpperCase()}
-  </div>
-)} 
+              {testimonial.image?<img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="testimonial-image"
+              />:<div className="testimonial-fallback">{testimonial.name.charAt(0).toUpperCase()}</div>}
             </div>
             <h3 className="testimonial-name">{testimonial.name}</h3>
             <span className="testimonial-position">

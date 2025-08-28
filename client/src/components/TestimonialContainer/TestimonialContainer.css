@@ -111,6 +111,7 @@
     justify-content: center;
     margin-bottom: 10px;
     overflow: hidden;
+    background-color: #1aab3c;
 }
 
 .testimonial-image {
@@ -242,7 +243,7 @@
     }
 
     .testimonial-text {
-        font-size: 0.8rem; /*1.05*/
+        font-size: 1.05rem;
         line-height: 1.4;
         margin-bottom: 0; /* ensure no gap */
     }
@@ -264,4 +265,10 @@
     .testimonial-position {
         font-size: 0.75rem;
     }
+}
+
+.testimonial-fallback{
+    color:white;
+    font-weight:600;
+    font-size:20px;
 }
