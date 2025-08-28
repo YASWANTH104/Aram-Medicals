@@ -47,7 +47,7 @@
 }
 
 .quote-icon {
-    color: #000000;
+    color: #212878;
     transition: color 0.3s ease;
 }
 
@@ -242,7 +242,7 @@
     }
 
     .testimonial-text {
-        font-size: 1.05rem;
+        font-size: 0.8rem; /*1.05*/
         line-height: 1.4;
         margin-bottom: 0; /* ensure no gap */
     }
