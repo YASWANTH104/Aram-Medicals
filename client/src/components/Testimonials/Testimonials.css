@@ -38,7 +38,6 @@
   .testimonials-heading {
     font-size: 6rem;
     padding-top: 15px;
-    font-family: 'Dirtyline36Daysoftype2022';
     font-weight: 100;
     padding-left: 40px;
     line-height: 0.6;
@@ -92,7 +91,6 @@
   
   /* The testimonial text/paragraph */
   .testimonial-text {
-    font-family: 'Syne', serif;
     /* Larger font size */
     font-size: 1.5rem;
     color: #ededed;
@@ -131,7 +129,6 @@
   
   /* Author's name */
   .testimonial-name {
-    font-family: 'Syne', serif;
     font-size: 1.1rem;
     font-weight: bold;
     color: #ffffff;
@@ -140,7 +137,6 @@
   
   /* Author's position/title */
   .testimonial-position {
-    font-family: 'Syne', serif;
     font-size: 0.9rem;
     color: #a0a0a0;
   }
