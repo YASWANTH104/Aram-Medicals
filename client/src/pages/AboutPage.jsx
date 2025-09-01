@@ -190,7 +190,7 @@ export default function AboutPage() {
                       <h3 className="text-3xl font-bold transform transition-all duration-500 group-hover:scale-105" style={{ color: 'white' }}>Our Mission</h3>
                     </div>
                     <p className="text-lg md:text-xl text-white leading-relaxed transform transition-all duration-500 group-hover:translate-x-2">
-                      To provide comprehensive, patient-centered cardiac care that improves the quality of life for our community. We strive to make advanced cardiac treatments accessible while maintaining the highest standards of medical excellence and compassionate care.
+                      To provide comprehensive, patient-centered Health care that improves the quality of life for our community. We strive to make advanced cardiac treatments accessible while maintaining the highest standards of medical excellence and compassionate care.
                     </p>
                   </div>
                   

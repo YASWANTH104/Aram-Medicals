@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHeartbeat, FaUserMd, FaLungs, FaBrain, FaStethoscope, FaHospitalAlt, FaChevronRight, FaStar, FaClock, FaUserShield, FaTimes, FaCross } from 'react-icons/fa';
+import { FaHeartbeat, FaUserMd, FaBrain, FaStethoscope, FaHospitalAlt, FaChevronRight, FaStar, FaClock, FaUserShield, FaTimes, FaCross,FaTint,FaLungs,FaVials,FaXRay,FaProcedures } from 'react-icons/fa';
 import ScrollAnimation from '../components/ScrollAnimation';
 import FloatingHearts from '../components/FloatingHearts';
 import MedicalBackgroundGraphics from '../components/MedicalBackgroundGraphics';
@@ -47,7 +47,44 @@ const services = [
     desc: 'Access to a wide range of medical specialists for personalized, expert advice.',
     details: 'We offer consultations with specialists across various fields, ensuring you receive expert advice and personalized care for your health needs.'
   },
+  {
+    name: 'Ambulatory Blood Pressure Monitoring',
+    icon: <FaHeartbeat className="text-4xl text-[#1aab3c]" />,
+    desc: '24-hour monitoring of blood pressure for accurate diagnosis of hypertension.',
+    details: 'Our Ambulatory Blood Pressure Monitoring service provides continuous measurement of blood pressure over 24 hours, offering better insights into hypertension and cardiovascular risk.'
+  },
+  {
+    name: 'Continuous Glucose Monitoring',
+    icon: <FaTint className="text-4xl text-[#1aab3c]" />,
+    desc: 'Real-time monitoring of blood sugar levels for better diabetes management.',
+    details: 'We provide Continuous Glucose Monitoring to track glucose levels throughout the day, enabling better management of diabetes with accurate and timely data.'
+  },
+  {
+    name: 'Chest X-Ray',
+    icon: <FaXRay className="text-4xl text-[#1aab3c]" />, // You may need to replace with FaRegImage or FaDiagnoses if FaXRay not available
+    desc: 'High-quality imaging for diagnosis of chest and lung-related conditions.',
+    details: 'Our Chest X-Ray facility provides fast and accurate imaging for the diagnosis of lung infections, injuries, and other thoracic conditions.'
+  },
+  {
+    name: 'Pulmonary Function Testing',
+    icon: <FaLungs className="text-4xl text-[#1aab3c]" />,
+    desc: 'Comprehensive lung function tests for diagnosis of respiratory disorders.',
+    details: 'Pulmonary Function Testing helps in assessing lung capacity, airflow, and gas exchange, essential for diagnosing conditions such as asthma and COPD.'
+  },
+  {
+    name: '24x7 Laboratory Services',
+    icon: <FaVials className="text-4xl text-[#1aab3c]" />,
+    desc: 'Round-the-clock advanced laboratory services with automated equipment.',
+    details: 'Our fully automated laboratory operates 24x7, offering quick and reliable diagnostic tests with state-of-the-art equipment and expert technicians.'
+  },
+  {
+    name: 'State-of-the-Art Operation Theatre',
+    icon: <FaProcedures className="text-4xl text-[#1aab3c]" />,
+    desc: 'Modern operation theatre equipped with the latest surgical technologies.',
+    details: 'Our operation theatres are designed with cutting-edge technology, ensuring maximum safety, precision, and comfort for all surgical procedures.'
+  },
 ];
+
 
 const features = [
   { icon: <FaStar className="text-2xl text-[#1aab3c]" />, label: 'Expert Doctors' },

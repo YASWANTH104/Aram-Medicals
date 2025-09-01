@@ -387,7 +387,7 @@ export default function HomePage() {
                   <span className="text-xl font-bold text-white">2023</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Advanced Equipment</h4>
-                    <p className="text-sm text-white">Upgraded to state-of-the-art cardiac diagnostic and interventional equipment</p>
+                    <p className="text-sm text-white">Upgraded to state-of-the-art OT and ICU</p>
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation direction="left" delay={0.27} styleType="scale">
