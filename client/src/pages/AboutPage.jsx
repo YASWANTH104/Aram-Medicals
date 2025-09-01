@@ -39,7 +39,7 @@ export default function AboutPage() {
               />
               <div className="flex-1">
                 <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#212878' }}>Dr. Ranganathan R RM</h1>
-                <div className="font-semibold mb-3 text-xl" style={{ color: '#1aab3c' }}>MD (Gen Med), DM (Cardio)</div>
+                <div className="font-semibold mb-3 text-xl" style={{ color: '#1aab3c' }}>MD (Gen Med), DM (Cardio), FSCAI (USA)</div>
                 <p className="text-xl text-gray-700 mb-6 leading-relaxed">
                   Welcome to <span style={{ color: '#1aab3c', fontWeight: 600 }}>Aram Medical Foundation</span>, your trusted center for comprehensive cardiac care in Pollachi. Our mission is to provide ethical, patient-centric, and world-class healthcare to the community.
                 </p>
@@ -49,6 +49,9 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <span className="font-semibold" style={{ color: '#212878' }}>Phone:</span> <a href="tel:966741147" style={{ color: '#1aab3c' }} className="hover:underline">96674 1147</a>
+                  </div>
+                                    <div>
+                    <span className="font-semibold" style={{ color: '#212878' }}>Landline:</span> <a href="tel:04259356999" style={{ color: '#1aab3c' }} className="hover:underline">04259 356999</a>
                   </div>
                   <div>
                     <span className="font-semibold" style={{ color: '#212878' }}>Email:</span> <a href="mailto:info@arammedicalfoundation.com" style={{ color: '#1aab3c' }} className="hover:underline">info@arammedicalfoundation.com</a>
@@ -67,7 +70,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-4xl font-bold" style={{ color: '#212878' }}>Meet Dr. Ranganathan R RM</h2>
                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                   <p>
-                    Dr. Ranganathan R RM is a distinguished cardiologist with over <strong>15+ years of experience</strong> in cardiac care. He completed his medical education with specialization in cardiology and has been serving the Pollachi community with dedication and expertise.
+                    Dr. Ranganathan R RM is a distinguished cardiologist with over <strong>10+ years of experience</strong> in cardiac care. He completed his medical education with specialization in cardiology at PSG Institute Of Medical Science and Research and has been serving the Pollachi community with dedication and expertise.
                   </p>
                   <p>
                     As the <strong>Director & Cardiologist</strong> at Aram Medical Foundation, Dr. Ranganathan leads a team of healthcare professionals committed to providing world-class cardiac care with a personal touch.
@@ -88,21 +91,21 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold mb-6" style={{ color: '#212878' }}>Professional Achievements</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">15+</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold p-8">10+</div>
                     <div>
                       <div className="font-semibold text-lg">Years of Experience</div>
                       <div className="text-gray-600">Dedicated cardiac care</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">5000+</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold p-8">15,000+</div>
                     <div>
                       <div className="font-semibold text-lg">Patients Treated</div>
                       <div className="text-gray-600">Successful procedures</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold">24/7</div>
+                    <div className="w-12 h-12 bg-[#1aab3c] rounded-full flex items-center justify-center text-white font-bold p-8">24/7</div>
                     <div>
                       <div className="font-semibold text-lg">Emergency Care</div>
                       <div className="text-gray-600">Always available</div>
@@ -133,7 +136,7 @@ export default function AboutPage() {
                     Our Story & Mission
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                    <span className="font-semibold" style={{ color: '#1aab3c' }}>Aram Medical Foundation</span> was established with a vision to provide accessible, high-quality cardiac care to the people of Pollachi and surrounding regions.
+                    <span className="font-semibold" style={{ color: '#1aab3c' }}>Aram Medical Foundation</span> was established with a vision to provide accessible, high-quality Health care to the people of Pollachi and surrounding regions.
                   </p>
                 </div>
               {/* </div> */}
@@ -202,7 +205,7 @@ export default function AboutPage() {
                       <h3 className="text-3xl font-bold transform transition-all duration-500 group-hover:scale-105" style={{ color: 'white' }}>Our Vision</h3>
                     </div>
                     <p className="text-lg md:text-xl text-white leading-relaxed transform transition-all duration-500 group-hover:translate-x-2">
-                      To be the leading cardiac care center in the region, known for our compassionate care, medical expertise, and commitment to community health. We aim to create a healthier future for generations to come through innovation and excellence.
+                      To be the leading Health care center in the region, known for our compassionate care, medical expertise, and commitment to community health. We aim to create a healthier future for generations to come through innovation and excellence.
                     </p>
                   </div>
                 </div>

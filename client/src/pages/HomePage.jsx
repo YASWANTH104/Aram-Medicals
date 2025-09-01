@@ -12,25 +12,6 @@ import VirusModel2 from '../components/VirusModel2';
 
 // Medical Background Graphics Component
 
-
-const testimonials = [
-  {
-    name: 'Indirani',
-    text: 'Doctor, we are very grateful for your service. Genuine concern for your patients is appreciated during this difficult phase in our life.',
-    role: 'Patient - Underwent Stenting',
-  },
-  {
-    name: 'Arumugam',
-    text: 'I am very happy to have found such a wonderful doctor in my hometown. I have been under your follow up for 2 years now and I should say apart from the medications whenever I come and meet you in the hospital I get a sense of happiness and fulfilment. May you grow great heights and serve this community like this forever.',
-    role: '',
-  },
-  {
-    name: 'Ramathal',
-    text: 'ஒவ்வொரு முறையும் நாம் கேட்கும் எல்லா சந்தேகங்களையும் பொறுமையாக தீர்த்து வைக்கும் மருத்துவரை நான் பார்த்ததே இல்லை. உங்களுக்கும் உங்கள் குடும்பத்தினருக்கும் நல்ல ஆரோக்கியத்தையும் மகிழ்ச்சியையும் வாழ்த்துகிறோம்.',
-    role: '',
-  },
-];
-
 const faqData = [
   {
     question: "Is the vaccine safe to take?",
@@ -52,7 +33,6 @@ const faqData = [
 
 export default function HomePage() {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
-  const total = testimonials.length;
   const [isHovered, setIsHovered] = useState(false);
   const timerRef = useRef();
   
@@ -63,17 +43,6 @@ export default function HomePage() {
   useEffect(() => {
     setOpenFAQ(0);
   }, []);
-
-  const prevTestimonial = () => {
-    if (testimonialIdx > 0) {
-      setTestimonialIdx(testimonialIdx - 1);
-    }
-  };
-  const nextTestimonial = () => {
-    if (testimonialIdx < 1) { // Only 2 positions: 0 and 1
-      setTestimonialIdx(testimonialIdx + 1);
-    }
-  };
 
   useEffect(() => {
     if (!isHovered && testimonialIdx < 1) { // Only auto-advance if not at last position
@@ -178,7 +147,7 @@ export default function HomePage() {
             <ScrollAnimation direction="up" delay={0.1}>
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#212878' }}>
-                  Some cardiac conditions and diseases we treat
+                  Some conditions and diseases we treat
                 </h2>
                 <ScrollAnimation direction="up" delay={0.2}>
                   <div className="flex flex-wrap justify-center gap-8 mb-12">
@@ -188,7 +157,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
-                      <span className="font-medium text-gray-800 text-lg">Cardiac Arrest</span>
+                      <span className="font-medium text-gray-800 text-lg">Coronary Artery Disease</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
@@ -201,6 +170,18 @@ export default function HomePage() {
                     <div className="flex items-center gap-3">
                       <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
                       <span className="font-medium text-gray-800 text-lg">Peripheral Artery Disease</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
+                      <span className="font-medium text-gray-800 text-lg">Cardiac Arthmias</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
+                      <span className="font-medium text-gray-800 text-lg">Hypertension and Diabetes</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaHeartbeat className="w-5 h-5 text-[#1aab3c]" />
+                      <span className="font-medium text-gray-800 text-lg">Bronchial asthma and other lung related diseases </span>
                     </div>
                   </div>
                 </ScrollAnimation>
@@ -276,7 +257,7 @@ export default function HomePage() {
             <ScrollAnimation direction="up" delay={0.7}>
               <div className="text-center mt-16">
                 <h3 className="text-3xl font-bold mb-6" style={{ color: '#212878' }}>
-                  Ask your cardiologist for comprehensive heart care.
+                  Ask your doctor for comprehensive health care.
                 </h3>
                 <Link to="/contact">
                   <button className="bg-[#1aab3c] text-white px-10 py-4 rounded-lg font-semibold text-xl shadow-lg hover:bg-[#212878] transition-colors flex items-center gap-2 mx-auto">
@@ -321,7 +302,7 @@ export default function HomePage() {
                   <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
                     <FaUsers className="text-2xl text-white" />
                   </div>
-                  <div className="text-3xl font-bold mb-2 text-white">5000+</div>
+                  <div className="text-3xl font-bold mb-2 text-white">35,000+</div>
                   <div className="text-sm font-medium text-white">Happy Patients</div>
                 </div>
               </ScrollAnimation>
@@ -368,7 +349,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white">Excellence in Cardiac Care</h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed text-white">
-                    Recognized for outstanding cardiac care services with state-of-the-art diagnostic equipment and expert medical team. Our commitment to patient safety and quality care has earned us the trust of the community.
+                    Recognized for outstanding Cardiac care services with state-of-the-art diagnostic equipment and expert medical team. Our commitment to patient safety and quality care has earned us the trust of the community.
                   </p>
                 </div>
               </ScrollAnimation>
@@ -381,7 +362,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-white">Expert Medical Team</h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed text-white">
-                    Led by Dr. Ranganathan R RM, our team of experienced cardiologists and healthcare professionals provide comprehensive cardiac care with a patient-centric approach, ensuring the best outcomes for every patient.
+                    Led by Dr. Ranganathan R RM, our team of experienced Doctors and healthcare professionals provide comprehensive Health care with a patient-centric approach, ensuring the best outcomes for every patient.
                   </p>
                 </div>
               </ScrollAnimation>
@@ -394,7 +375,7 @@ export default function HomePage() {
                 <ScrollAnimation direction="up" delay={0.13} styleType="scale">
                   <div className="text-center">
                                     <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-white">2014</span>
+                  <span className="text-xl font-bold text-white">2022</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Foundation Established</h4>
                     <p className="text-sm text-white">Aram Medical Foundation was established with a vision to provide comprehensive cardiac care</p>
@@ -403,7 +384,7 @@ export default function HomePage() {
                 <ScrollAnimation direction="down" delay={0.19} styleType="rotate">
                   <div className="text-center">
                                     <div className="w-16 h-16 bg-[#1aab3c] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-white">2018</span>
+                  <span className="text-xl font-bold text-white">2023</span>
                 </div>
                     <h4 className="font-bold mb-2 text-white">Advanced Equipment</h4>
                     <p className="text-sm text-white">Upgraded to state-of-the-art cardiac diagnostic and interventional equipment</p>
