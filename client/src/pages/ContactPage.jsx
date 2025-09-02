@@ -255,7 +255,7 @@ const ContactUs = () => {
                   <ScrollAnimation direction="up" delay={0.1}>
                     <Link to="/about">
                       <button className="group border-2 border-[#222] text-[#222] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold flex items-center gap-2 transition-colors duration-200 hover:bg-[#222] hover:text-white focus:outline-none mb-8 sm:mb-10">
-                        About Aram Medicals
+                        About Aram Medical Foundation
                         <span className="inline-block transition-transform duration-200 group-hover:translate-x-2">
                           <svg
                             width="18"

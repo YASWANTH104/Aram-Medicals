@@ -4,12 +4,12 @@ import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { useRef, useState, useEffect } from "react";
 
 function Stethoscope({ scale, position }) {
-  const { scene } = useGLTF("/doctors_stethoscope.glb");
+  const { scene } = useGLTF("/dna.glb");
   const ref = useRef();
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.07; // smooth rotation
+      ref.current.rotation.y += 0.009; // smooth rotation
     }
   });
 
@@ -28,12 +28,12 @@ export default function VirusModel2() {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         // ✅ Large screens (desktop)
-        setScale(0.9);               // decreased from 1.2 → fits better
+        setScale(0.4);               // decreased from 1.2 → fits better
         setPosition([0.3, -0.3, 0]); // slight shift right & down for alignment
         setDimensions({ width: 700, height: 500 });
       } else {
         // ✅ Mobile / tablet (unchanged)
-        setScale(0.9);
+        setScale(0.4);
         setPosition([0, -0.3, 0]);
         setDimensions({ width: 500, height: 400 });
       }
@@ -59,4 +59,4 @@ export default function VirusModel2() {
   );
 }
 
-useGLTF.preload("/doctors_stethoscope.glb");
+useGLTF.preload("/dna.glb");

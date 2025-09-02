@@ -69,8 +69,8 @@ export default function HomePage() {
         <div className="relative z-10 flex-1 max-w-3xl mb-12 md:mb-0">
           <ScrollAnimation direction="up" delay={0.1}>
             <Link to="/about">
-              <button className="group border-2 border-[#222] text-[#222] px-8 py-3 rounded-full text-lg font-semibold flex items-center gap-2 transition-colors duration-200 hover:bg-[#222] hover:text-white focus:outline-none mb-8">
-                About Aram Medicals
+              <button className="group border-2 border-[#222] text-[#222] px-8 py-3 rounded-full text-lg font-semibold flex items-center gap-2 transition-colors duration-200 hover:bg-[#212878] hover:text-white focus:outline-none mb-8">
+                About Aram Medical Foundation
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-2">
                   <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
