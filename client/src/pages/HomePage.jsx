@@ -84,7 +84,7 @@ export default function HomePage() {
               <span className="inline-block bg-[#2B2B4B] px-6 py-3 mb-3 w-fit">ARAM MEDICAL</span><br />
               <span className="inline-block bg-[#2B2B4B] px-6 py-3 mb-3 w-fit">FOUNDATION &</span><br />
               <span className="inline-block bg-[#2B2B4B] px-6 py-3 mb-3 w-fit">COMPREHENSIVE</span><br />
-              <span className="inline-block bg-[#2B2B4B] px-6 py-3 mb-3 w-fit">CARDIAC CARE</span><br />
+              <span className="inline-block bg-[#2B2B4B] px-6 py-3 mb-3 w-fit">HEALTH CARE</span><br />
               <span className="inline-block bg-[#2B2B4B] px-6 py-3 w-fit">CENTER</span>
             </h1>
           </ScrollAnimation>
@@ -125,14 +125,6 @@ export default function HomePage() {
           </div>
         </ScrollAnimation>*/}
         {/* Custom polygon clip-paths for the cards */}
-        <style>{`
-          .clip-polygon-green {
-            clip-path: polygon(20% 0%, 100% 0%, 100% 90%, 80% 100%, 0% 100%, 0% 10%);
-          }
-          .clip-polygon-white {
-            clip-path: polygon(10% 0%, 100% 0%, 100% 90%, 90% 100%, 0% 100%, 0% 10%);
-          }
-        `}</style>
       </div>
       <ScrollAnimation direction="up" delay={0.2}>
         {/* Cardiac Prevention & Care Section */}
@@ -664,10 +656,10 @@ export default function HomePage() {
                   
                   <div className="relative z-10">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                      Safeguard yourself against certain HPV-related cancers
+                    Your First Step to a Healthier Tomorrow
                     </h2>
                     <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                      Early intervention can lead to better HPV prevention. Talk to your gynaecologist about HPV vaccination and screening today.
+                    Early detection saves lives – routine check-ups help identify risks before they become serious. Partner with Aram for lifelong wellness.
                     </p>
                     <Link to="/contact">
                       <button className="bg-[#1aab3c] text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-[#212878] transition-colors flex items-center gap-3">

@@ -1,9 +1,9 @@
 // AwardsRecognition.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "../../assets/img1.jpg"
+import img1 from "../../assets/img1.jpg";
 
-function ThreeDCard({ title, description, img }) {
+function ThreeDCard({ title, qualification, description, img }) {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -40,6 +40,12 @@ function ThreeDCard({ title, description, img }) {
       </div>
       <div className="p-6 text-center">
         <h3 className="text-2xl font-bold text-[#212878]">{title}</h3>
+
+        {/* ✅ Show qualification if available */}
+        {qualification && (
+          <h4 className="text-sm text-[#1aab3c] mt-1">{qualification}</h4>
+        )}
+
         <p className="text-gray-600 mt-3">{description}</p>
       </div>
     </motion.div>
@@ -48,22 +54,66 @@ function ThreeDCard({ title, description, img }) {
 
 export default function AwardsRecognition() {
   const awards = [
-    { title: "Best Hospital 2024", description: "Recognized nationally", img: img1 },
-    { title: "Excellence in Service", description: "For outstanding care", img: img1 },
-    { title: "Innovation Award", description: "For advanced technology", img: img1 }
-    ];
-  const team = [
-    { title: "Dr. A Kumar", description: "Cardiologist", img: img1 },
-    { title: "Dr. Priya N", description: "Pediatrician", img: img1 },
-    { title: "Dr. V Rao", description: "Neurologist", img: img1 },
+    {
+      title: "Best Hospital 2024",
+      description: "Recognized nationally",
+      img: img1,
+    },
+    {
+      title: "Excellence in Service",
+      description: "For outstanding care",
+      img: img1,
+    },
+    {
+      title: "Innovation Award",
+      description: "For advanced technology",
+      img: img1,
+    },
   ];
 
-
+  const team = [
+    {
+      title: "Dr.Pratheeb kumar", 
+      qualification: "MBBS MD (RESPIRATORY MEDICINE)",
+      description: "Consultant Pulmonologist",
+      img: "doc1.jpeg",
+    },
+    {
+      title: "Dr.Rathinam",
+      qualification: "MBBS, MD (Internal Medicine)",
+      description: "Consultant Physician",
+      img: "doc2.jpeg",
+    },
+    {
+      title: "Dr.Aishwarya Muthubalaji",
+      qualification: "MBBS, MEM, FICM",
+      description: "Emergency Physician",
+      img: "doc4.jpeg",
+    },
+        {
+      title: "Dr.Sukhesh P", 
+      qualification: "MBBS, MD(Psychiatry)",
+      description: "Psychiatrist",
+      img: "doc3.jpeg",
+    },
+    {
+      title: "Dr.Murugananth",
+      qualification: "MD (General Medicine), DM(Nephrology)",
+      description: "Consultant Nephrologist, Renal transplant Physician",
+      img: img1,
+    },
+    {
+      title: "Dr.K.Karthikeyan",
+      qualification: "MS. , Mch.",
+      description: "Consultant Urologist & Andrologist",
+      img: "doc5.jpeg",
+    },
+  ];
 
   return (
     <div className="overflow-hidden">
       {/* Awards Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <h2 className="text-5xl font-bold text-center mb-12 text-[#212878]">
           Our Awards
         </h2>
@@ -72,7 +122,7 @@ export default function AwardsRecognition() {
             <ThreeDCard key={i} {...award} />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Team Section */}
       <section className="py-20">

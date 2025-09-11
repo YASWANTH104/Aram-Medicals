@@ -4,16 +4,10 @@ import { Scroll } from "@react-three/drei";
 
 export default function Specialists() {
   const items = [
-    "24x7 Cardiac and Neuro Care",
-    "24x7 Trauma and Critical Care",
-    "24x7 Emergency Centre in Guduvancheri",
-    "CCU / CT Scan / USG / ECHO / TMT",
-    "Advanced Cath Lab",
+    "24x7 Cardiac and Health Care",
+    "24x7 Emergency Centre in Pollachi",
+    "CCU / USG / ECHO / TMT",
     "Modular Operation Theatre",
-    "Advanced Joint Replacement",
-    "Mitral Valve, Angio and Bypass",
-    "Endovascular Laser Procedures",
-    "65 Bed Super Speciality Hospital in Vandalur",
   ];
 
   return (
