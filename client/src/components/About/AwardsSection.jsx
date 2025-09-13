@@ -76,7 +76,7 @@ export default function AwardsRecognition() {
       title: "Dr. Ranganathan R RM",
       qualification: "MD (Gen Med), DM (Cardio), FSCAI (USA)",
       description: "Cardiologist",
-      img: "https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg",
+      img: "docMain.jpeg",
     },
     {
       title: "Dr.Pratheeb kumar",
