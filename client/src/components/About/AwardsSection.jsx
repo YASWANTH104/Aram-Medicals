@@ -73,7 +73,13 @@ export default function AwardsRecognition() {
 
   const team = [
     {
-      title: "Dr.Pratheeb kumar", 
+      title: "Dr. Ranganathan R RM",
+      qualification: "MD (Gen Med), DM (Cardio), FSCAI (USA)",
+      description: "Cardiologist",
+      img: "https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg",
+    },
+    {
+      title: "Dr.Pratheeb kumar",
       qualification: "MBBS MD (RESPIRATORY MEDICINE)",
       description: "Consultant Pulmonologist",
       img: "doc1.jpeg",
@@ -90,8 +96,8 @@ export default function AwardsRecognition() {
       description: "Emergency Physician",
       img: "doc4.jpeg",
     },
-        {
-      title: "Dr.Sukhesh P", 
+    {
+      title: "Dr.Sukhesh P",
       qualification: "MBBS, MD(Psychiatry)",
       description: "Psychiatrist",
       img: "doc3.jpeg",

@@ -45,7 +45,7 @@ export default function Specialists() {
         <div className="relative w-full h-64 md:h-80 lg:h-[400px] rounded-lg overflow-hidden shadow-lg">
           <iframe
             className="w-full h-full rounded-2xl"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://www.youtube.com/embed/iuBNpn0eDUU"
             title="OneHealth Specialists"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

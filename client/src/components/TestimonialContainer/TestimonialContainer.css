@@ -205,7 +205,7 @@
     }
 
     .testimonial-text {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 0;
     }
@@ -221,10 +221,10 @@
     }
 
     .testimonial-name {
-        font-size: 0.9rem;
+        font-size: 1.1rem;  /*0.9*/
     }
 
     .testimonial-position {
-        font-size: 0.75rem;
+        font-size: 0.9rem;  /*0.75*/
     }
 }

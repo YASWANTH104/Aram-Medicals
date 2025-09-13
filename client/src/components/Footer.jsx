@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="bg-[#212878] text-white shadow-xl p-8 w-full">
     <div className="text-center mb-6">
       <h3 className="text-2xl font-bold mb-2">Contact Us for Cardiac Care</h3>
-      <p className="text-lg opacity-90">Get expert cardiac care at Aram Medical Foundation</p>
+      <p className="text-lg opacity-90">Get expert Health care at Aram Medical Foundation</p>
     </div>
     
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
