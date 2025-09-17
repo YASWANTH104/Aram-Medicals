@@ -520,7 +520,7 @@ export default function HomePage() {
               {/* Main Heading */}
               <ScrollAnimation direction="up" delay={0.1}>
                 <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 leading-tight w-3/4">
-                  Major global and Indian medical bodies recommend HPV vaccination for girls aged 9+
+                  Our Commitment to Excellence - Setting Standards in Patient Care
                 </h2>
               </ScrollAnimation>
 
@@ -538,7 +538,7 @@ export default function HomePage() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-xl text-gray-800 leading-tight flex-1">Indian Academy of Pediatrics (IAP)</span>
+                        <span className="text-xl text-gray-800 leading-tight flex-1">Aligning with global best practices</span>
                       </div>
                       <div className="flex items-start gap-3 h-12 px-6 py-3">
                         <div className="w-5 h-5 bg-[#1aab3c] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -546,7 +546,7 @@ export default function HomePage() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-xl text-gray-800 leading-tight flex-1">Centers for Disease Control and Prevention (CDC)</span>
+                        <span className="text-xl text-gray-800 leading-tight flex-1">Safe & ethical medical practices</span>
                       </div>
                     </div>
                   </ScrollAnimation>
@@ -560,7 +560,7 @@ export default function HomePage() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-xl text-gray-800 leading-tight flex-1">Federation of Obstetric and Gynecological Societies of India (FOGSI)</span>
+                        <span className="text-xl text-gray-800 leading-tight flex-1">Multidisciplinary care approach</span>
                       </div>
                       <div className="flex items-start gap-3 h-12 px-6 py-3">
                         <div className="w-5 h-5 bg-[#1aab3c] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -568,7 +568,7 @@ export default function HomePage() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-xl text-gray-800 leading-tight flex-1">American College of Obstetricians and Gynecologists (ACOG)</span>
+                        <span className="text-xl text-gray-800 leading-tight flex-1">Affordable, accessible treatments</span>
                       </div>
                     </div>
                   </ScrollAnimation>
@@ -582,7 +582,7 @@ export default function HomePage() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span className="text-xl text-gray-800 leading-tight flex-1">World Health Organization (WHO)</span>
+                        <span className="text-xl text-gray-800 leading-tight flex-1">Community outreach & awareness programs</span>
                       </div>
                     </div>
                   </ScrollAnimation>
@@ -594,7 +594,7 @@ export default function HomePage() {
                 <div className="w-full mt-24">
                   <ScrollAnimation direction="up" delay={0.1}>
                     <h3 className="text-5xl font-bold my-8 text-gray-900">
-                      Which HPV vaccines are available in India?
+                      Which Programs Make Us Unique?
                     </h3>
                   </ScrollAnimation>
                   
@@ -604,10 +604,10 @@ export default function HomePage() {
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
                         <div className="pl-6">
                           <h4 className="text-2xl font-bold mb-2 text-gray-900">
-                            Nine-valent HPV Vaccine
+                            Community heart health camps
                           </h4>
                           <p className="text-xl text-gray-700 leading-relaxed">
-                            Nonavalent vaccine is expected to help prevent ~98% of cervical cancers.
+                            Organized local events offering free cardiovascular screenings and consultations.
                           </p>
                         </div>
                       </div>
@@ -618,10 +618,36 @@ export default function HomePage() {
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
                         <div className="pl-6">
                           <h4 className="text-2xl font-bold mb-2 text-gray-900">
-                            Quadrivalent HPV Vaccine
+                            Patient education & awareness drives
                           </h4>
                           <p className="text-xl text-gray-700 leading-relaxed">
-                            Quadrivalent HPV is expected to help prevent ~83% of cervical cancers.
+                            Programs designed to inform individuals about heart health and preventive care.
+                          </p>
+                        </div>
+                      </div>
+                    </ScrollAnimation>
+                    <ScrollAnimation direction="left" delay={0.2} styleType="scale">
+                      <div className="relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
+                        <div className="pl-6">
+                          <h4 className="text-2xl font-bold mb-2 text-gray-900">
+                            Rural outreach clinics
+                          </h4>
+                          <p className="text-xl text-gray-700 leading-relaxed">
+                            Mobile or temporary clinics providing medical services in underserved rural areas.
+                          </p>
+                        </div>
+                      </div>
+                    </ScrollAnimation>
+                    <ScrollAnimation direction="left" delay={0.2} styleType="scale">
+                      <div className="relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#1aab3c] rounded-full"></div>
+                        <div className="pl-6">
+                          <h4 className="text-2xl font-bold mb-2 text-gray-900">
+                            Family counseling for chronic illness
+                          </h4>
+                          <p className="text-xl text-gray-700 leading-relaxed">
+                            Guidance sessions helping families manage long-term health conditions together.
                           </p>
                         </div>
                       </div>
@@ -678,52 +704,6 @@ export default function HomePage() {
                   <VirusModel className="w-full h-80" />
                 </div>
               </ScrollAnimation>
-
-
-              {/* Right: Professional Colorful Heart Graphic }
-              <ScrollAnimation direction="right" delay={0.2} styleType="scale">
-                <div className="flex justify-center lg:justify-end">
-                  <div className="relative">
-                    {/* Main Heart Container }
-                    <div className="w-80 h-80 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-full flex items-center justify-center shadow-2xl border-4 border-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
-                      {/* Central Heart }
-                      <div className="relative flex items-center justify-center">
-                        <FaHeartbeat className="text-9xl text-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-pulse" />
-                        
-                        {/* Colorful Pulse Rings - Perfectly Centered }
-                        <div className="absolute w-40 h-40 border-4 border-blue-400 rounded-full animate-ping opacity-30"></div>
-                        <div className="absolute w-40 h-40 border-4 border-purple-400 rounded-full animate-ping opacity-25" style={{animationDelay: '0.3s'}}></div>
-                        <div className="absolute w-40 h-40 border-4 border-pink-400 rounded-full animate-ping opacity-20" style={{animationDelay: '0.6s'}}></div>
-                      </div>
-                      
-                      {/* Medical Cross }
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-gradient-to-r from-blue-500 to-purple-500">
-                        <div className="w-10 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                        <div className="absolute w-1 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                      </div>
-                      
-                      {/* Floating Medical Elements }
-                      <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                        <FaHeartbeat className="text-white text-lg" />
-                      </div>
-                      <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                        <FaUserMd className="text-white text-base" />
-                      </div>
-                      <div className="absolute top-1/2 -left-10 w-12 h-12 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center shadow-lg">
-                        <FaStar className="text-white text-sm" />
-                      </div>
-                      <div className="absolute top-1/2 -right-10 w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
-                        <FaAward className="text-white text-sm" />
-                      </div>
-                    </div>
-                    
-                    {/* Background Decorative Elements }
-                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-cyan-300 to-cyan-500 rounded-full opacity-60"></div>
-                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-br from-violet-300 to-violet-500 rounded-full opacity-60"></div>
-                    <div className="absolute top-1/4 -right-8 w-4 h-4 bg-gradient-to-br from-rose-300 to-rose-500 rounded-full opacity-60"></div>
-                  </div>
-                </div>
-              </ScrollAnimation>*/}
             </div>
 
             {/* FAQs Section */}
