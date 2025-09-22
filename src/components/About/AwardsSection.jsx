@@ -1,7 +1,7 @@
 // AwardsRecognition.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "../../assets/img1.jpg";
+// import img1 from "../../assets/img1.jpg";
 
 function ThreeDCard({ title, qualification, description, img }) {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
@@ -53,23 +53,23 @@ function ThreeDCard({ title, qualification, description, img }) {
 }
 
 export default function AwardsRecognition() {
-  const awards = [
-    {
-      title: "Best Hospital 2024",
-      description: "Recognized nationally",
-      img: img1,
-    },
-    {
-      title: "Excellence in Service",
-      description: "For outstanding care",
-      img: img1,
-    },
-    {
-      title: "Innovation Award",
-      description: "For advanced technology",
-      img: img1,
-    },
-  ];
+  // const awards = [
+  //   {
+  //     title: "Best Hospital 2024",
+  //     description: "Recognized nationally",
+  //     img: img1,
+  //   },
+  //   {
+  //     title: "Excellence in Service",
+  //     description: "For outstanding care",
+  //     img: img1,
+  //   },
+  //   {
+  //     title: "Innovation Award",
+  //     description: "For advanced technology",
+  //     img: img1,
+  //   },
+  // ];
 
   const team = [
     {
@@ -106,7 +106,7 @@ export default function AwardsRecognition() {
       title: "Dr.Murugananth",
       qualification: "MD (General Medicine), DM(Nephrology)",
       description: "Consultant Nephrologist, Renal transplant Physician",
-      img: img1,
+      img: "imag1.jpg",
     },
     {
       title: "Dr.K.Karthikeyan",

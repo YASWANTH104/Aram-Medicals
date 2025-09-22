@@ -8,12 +8,11 @@ import Footer from '../components/Footer';
 import AwardsSection from '../components/About/AwardsSection';
 
 const galleryImages = [
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3243-2048x1365.jpg',
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3247-2048x1365.jpg',
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3293-2048x1365.jpg',
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3242-2048x1365.jpg',
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3295-2048x1366.jpg',
-  'https://arammedicalfoundation.com/wp-content/uploads/2022/07/IMG_3292-2048x1365.jpg',
+  '/gall1.jpeg',
+  '/gall2.jpeg',
+  '/gall3.jpeg',
+  '/gall4.jpeg',
+  '/gall5.jpeg',
 ];
 
 
@@ -33,7 +32,7 @@ export default function AboutPage() {
           <ScrollAnimation direction="up" delay={0.1}>
             <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 mb-16">
               <img
-                src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
+                src="docMain.jpeg"
                 alt="Dr. Ranganathan R RM"
                 className="w-40 h-40 rounded-full object-cover border-4 border-[#1aab3c] shadow-md mb-6 md:mb-0"
               />

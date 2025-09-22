@@ -27,7 +27,7 @@ export default function BlogsPage() {
   const timeAgo = (timestamp) => {
     if (!timestamp) return "Unknown";
 
-    const blogDate = new Date(timestamp); 
+    const blogDate = new Date(timestamp);
     if (isNaN(blogDate.getTime())) return "Unknown";
 
     const now = new Date();
@@ -38,21 +38,34 @@ export default function BlogsPage() {
     const diffDays = Math.floor(diffHours / 24);
 
     if (diffSeconds < 60) return "Now";
-    if (diffMinutes < 60) return `${diffMinutes} min${diffMinutes > 1 ? "s" : ""} ago`;
-    if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
+    if (diffMinutes < 60)
+      return `${diffMinutes} min${diffMinutes > 1 ? "s" : ""} ago`;
+    if (diffHours < 24)
+      return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
     if (diffDays === 1) return "Yesterday";
     if (diffDays < 7) return `${diffDays} days ago`;
-    if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? "s" : ""} ago`;
-    if (diffDays < 365) return `${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) > 1 ? "s" : ""} ago`;
-    return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) > 1 ? "s" : ""} ago`;
+    if (diffDays < 30)
+      return `${Math.floor(diffDays / 7)} week${
+        Math.floor(diffDays / 7) > 1 ? "s" : ""
+      } ago`;
+    if (diffDays < 365)
+      return `${Math.floor(diffDays / 30)} month${
+        Math.floor(diffDays / 30) > 1 ? "s" : ""
+      } ago`;
+    return `${Math.floor(diffDays / 365)} year${
+      Math.floor(diffDays / 365) > 1 ? "s" : ""
+    } ago`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 px-6 pt-24 pb-16">
+    <div className="min-h-screen px-6 pt-24 pb-16">
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <FloatingHearts />
+      </div>
       {/* Page Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-[#212878] pt-10">
-            Blogs
+          Blogs
         </h1>
         <p className="mt-3 text-gray-600 text-lg">
           Discover articles, stories, and insights from our community ✨

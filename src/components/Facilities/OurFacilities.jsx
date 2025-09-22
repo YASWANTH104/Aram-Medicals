@@ -2,44 +2,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ScrollAnimation from "../ScrollAnimation";
-import img1 from "../../assets/img1.jpg";
-import img2 from "../../assets/img2.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
-import img6 from "../../assets/img6.jpg";
-import img8 from "../../assets/img8.jpg";
-import img9 from "../../assets/img9.jpg";
-import img10 from "../../assets/img10.jpg";
-import fac1 from "../../assets/fac1.jpeg";
-import fac2 from "../../assets/fac2.jpeg";
-import fac3 from "../../assets/fac3.jpeg";
-import fac4 from "../../assets/fac4.jpeg";
-import fac5 from "../../assets/fac5.jpeg";
-import fac6 from "../../assets/fac6.jpeg";
-import fac7 from "../../assets/fac7.jpeg";
-import fac8 from "../../assets/fac8.jpeg";
-import fac9 from "../../assets/fac9.jpeg";
-import fac10 from "../../assets/fac10.jpeg";
+
 
 export default function OurFacilities() {
   const images = [
-    img1,
-    img2,
-    img4,
-    img5,
-    img6,
-    img8,
-    img9,
-    img10,
-    fac2,
-    fac3,
-    fac4,
-    fac5,
-    fac6,
-    fac7,
-    fac8,
-    fac9,
-    fac10,
+    "/img1.jpg",
+    "/img2.jpg",
+    "/img4.jpg",
+    "/img5.jpg",
+    "/img6.jpg",
+    "/img8.jpg",
+    "/img9.jpg",
+    "/img10.jpg",
+    "/fac2.jpeg",
+    "/fac3.jpeg",
+    "/fac4.jpeg",
+    "/fac5.jpeg",
+    "/fac6.jpeg",
+    "/fac7.jpeg",
+    "/fac8.jpeg",
+    "/fac9.jpeg",
+    "/fac10.jpeg",
   ];
 
   return (
@@ -49,7 +32,7 @@ export default function OurFacilities() {
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-extrabold">
             <span className="text-[#1aab3c]">Facilities</span>{" "}
-            <span className="text-[#0B3A4A]">at Aram Medicals</span>
+            <span className="text-[#212878]">at Aram Medicals</span>
           </h1>
         </div>
       </ScrollAnimation>

@@ -21,7 +21,7 @@ export default function Specialists() {
 
       {/* Heading */}
       <ScrollAnimation direction="up" delay={0.2}>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B3A4A] mb-10">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#212878] mb-10">
         Best <span className="text-[#1aab3c]">Specialists</span> & Equipment
       </h2>
       </ScrollAnimation>

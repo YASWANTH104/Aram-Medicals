@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="relative flex items-center justify-between px-4 md:px-8 py-4">
         {/* Logo (always visible) */}
         <Link to="/" className="flex items-center space-x-2 flex-shrink-0 hover:opacity-80 transition-opacity duration-200">
-          <img src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/File_000-e1653998587142.png" alt="Logo" className="h-10 w-auto" />
+          <img src="logo.jpeg" alt="Logo" className="h-12 w-auto" />
         </Link>
         {/* Centered Navigation Links (desktop only) */}
         <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-8 text-lg font-medium">

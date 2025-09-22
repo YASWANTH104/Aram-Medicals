@@ -19,10 +19,10 @@ export default function InternationalPatientsCentre() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <h2 className="leading-[1.05] font-bold text-4xl md:text-6xl text-[#212878]">
             {/* Outlined line */}
-              International
+              Comprehensive
 
             {/* Solid line */}
-            <span className="block text-3xl md:text-4xl text-[#0B3A4A]">
+            <span className="block text-3xl md:text-4xl text-[#1aab3c]">
               Patients Centre
             </span>
           </h2>

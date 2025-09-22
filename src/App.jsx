@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<BlogDetailPage />} />
-          <Route path="/add-blog-aram=medicals" element={<AddBlogPage />} />
+          <Route path="/add-blog" element={<AddBlogPage />} />
         </Routes>
       </div>
     </Router>

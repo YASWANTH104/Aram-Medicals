@@ -306,11 +306,12 @@ export default function ServicesPage() {
               >
                 Why Choose Aram Medical Foundation?
               </h2>
-              <div className="flex flex-wrap justify-center gap-8">
+              {/* <div className="flex flex-wrap justify-center gap-8"> */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center md:mx-auto md:max-w-[900px]">
                 {features.map((f, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 min-w-[180px] hover:shadow-xl transition-shadow duration-300"
+                    className="flex flex-col justify-center items-center bg-white rounded-xl shadow-lg p-6 min-w-[180px] hover:shadow-xl transition-shadow duration-300 h-[150px]"
                   >
                     {f.icon}
                     <span className="mt-3 font-semibold text-lg text-[#212878]">

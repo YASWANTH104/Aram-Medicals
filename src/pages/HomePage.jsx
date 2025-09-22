@@ -14,20 +14,36 @@ import VirusModel2 from '../components/VirusModel2';
 
 const faqData = [
   {
-    question: "Is the vaccine safe to take?",
+    question: "What are the visiting hours?",
     answer: "As per clinical studies, the vaccine is generally well tolerated without risk of major adverse/side effects. Talk to your gynaecologist for further information on the right course for you."
   },
   {
-    question: "Can HPV vaccination cause infertility?",
+    question: "How can I schedule an appointment?",
     answer: "No, HPV vaccination does not cause infertility. Extensive clinical studies have shown that the vaccine is safe and does not affect fertility. In fact, it helps prevent cervical cancer which can impact reproductive health."
   },
   {
-    question: "What is the recommended age for HPV vaccination?",
+    question: "Is there parking available?",
     answer: "The HPV vaccine is recommended for girls and women aged 9-26 years. The ideal age is 11-12 years, but it can be given as early as age 9. Vaccination is most effective when given before exposure to HPV."
   },
   {
-    question: "How many doses are required for HPV vaccination?",
+    question: "Do I need an appointment, or do you accept walk-ins?",
     answer: "The number of doses depends on age: 2 doses for those aged 9-14 years (given 6-12 months apart), and 3 doses for those aged 15-26 years (given at 0, 1-2, and 6 months). Your doctor will determine the appropriate schedule."
+  },
+  {
+    question:"What should I do in case of a medical emergency (such as chest pain or breathing difficulty)?",
+    answer:""
+  },
+  {
+    question:"How long will I need to stay in the hospital after a major procedure or surgery?",
+    answer:""
+  },
+  {
+    question:"Is the hospital facilities wheelchair accessible?",
+    answer:""
+  },
+  {
+    question:"How can I give feedback about my experience?",
+    answer:""
   }
 ];
 
@@ -402,7 +418,7 @@ export default function HomePage() {
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
                       <div className="flex-shrink-0">
                         <img
-                          src="https://arammedicalfoundation.com/wp-content/uploads/2022/06/WhatsApp-Image-2022-06-03-at-6.03.14-PM-150x150.jpeg"
+                          src="docMain.jpeg"
                           alt="Dr. Ranganathan R RM"
                           className="w-32 h-32 rounded-full object-cover border-4 border-[#1aab3c] shadow-md"
                         />
