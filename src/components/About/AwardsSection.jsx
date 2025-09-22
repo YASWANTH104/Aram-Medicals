@@ -106,7 +106,7 @@ export default function AwardsRecognition() {
       title: "Dr.Murugananth",
       qualification: "MD (General Medicine), DM(Nephrology)",
       description: "Consultant Nephrologist, Renal transplant Physician",
-      img: "imag1.jpg",
+      img: "doc6.jpeg",
     },
     {
       title: "Dr.K.Karthikeyan",
