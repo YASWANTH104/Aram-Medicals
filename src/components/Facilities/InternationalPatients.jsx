@@ -17,7 +17,7 @@ export default function InternationalPatientsCentre() {
         <ScrollAnimation direction="up" delay={0.4}>
         {/* Heading + CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <h2 className="leading-[1.05] font-bold text-4xl md:text-6xl text-[#212878]">
+          <h2 className="leading-[1.05] font-bold text-5xl md:text-7xl text-[#212878]">
             {/* Outlined line */}
               Comprehensive
 
@@ -43,7 +43,7 @@ export default function InternationalPatientsCentre() {
         {/* Intro paragraph */}
         <ScrollAnimation direction="up" delay={0.6}>
         <p className="mt-6 max-w-3xl text-lg md:text-xl text-gray-600 leading-relaxed">
-          At OneHealth Hospital, we are committed to fostering an environment
+          At Aram Medicals, we are committed to fostering an environment
           that encourages healing while providing the comfort and warmth of home.
         </p>
         </ScrollAnimation>

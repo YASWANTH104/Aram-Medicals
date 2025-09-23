@@ -68,7 +68,7 @@ export default function BlogsPage() {
           Blogs
         </h1>
         <p className="mt-3 text-gray-600 text-lg">
-          Discover articles, stories, and insights from our community ✨
+          Discover articles, stories, and insights from our community
         </p>
       </div>
 

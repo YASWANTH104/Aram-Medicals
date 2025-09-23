@@ -336,7 +336,6 @@ export default function ServicesPage() {
                 <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                   Comprehensive heart health diagnostics, treatment, and
                   rehabilitation under the expert guidance of Dr. Ranganathan R
-                  RM
                 </p>
               </div>
 
