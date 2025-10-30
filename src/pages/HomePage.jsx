@@ -15,35 +15,35 @@ import VirusModel2 from '../components/VirusModel2';
 const faqData = [
   {
     question: "What are the visiting hours?",
-    answer: "As per clinical studies, the vaccine is generally well tolerated without risk of major adverse/side effects. Talk to your gynaecologist for further information on the right course for you."
+    answer: "24*7 doctors will be available.Specialist doctors available on appointment basis."
   },
   {
     question: "How can I schedule an appointment?",
-    answer: "No, HPV vaccination does not cause infertility. Extensive clinical studies have shown that the vaccine is safe and does not affect fertility. In fact, it helps prevent cervical cancer which can impact reproductive health."
+    answer: "Schedule appointment through Mobile no: 866-74ll477 or Landline no: 04259 356999"
   },
   {
     question: "Is there parking available?",
-    answer: "The HPV vaccine is recommended for girls and women aged 9-26 years. The ideal age is 11-12 years, but it can be given as early as age 9. Vaccination is most effective when given before exposure to HPV."
+    answer: "Yes, Parking is available."
   },
   {
     question: "Do I need an appointment, or do you accept walk-ins?",
-    answer: "The number of doses depends on age: 2 doses for those aged 9-14 years (given 6-12 months apart), and 3 doses for those aged 15-26 years (given at 0, 1-2, and 6 months). Your doctor will determine the appropriate schedule."
+    answer:"Yes, Appointment is Required.For emergency one can walk in."
   },
   {
     question:"What should I do in case of a medical emergency (such as chest pain or breathing difficulty)?",
-    answer:""
+    answer:"In case of medical emergency call an ambulance/visit a nearby primary care center."
   },
   {
     question:"How long will I need to stay in the hospital after a major procedure or surgery?",
-    answer:""
+    answer:"Hospital stay 3-5 days depending upon the procedure."
   },
   {
     question:"Is the hospital facilities wheelchair accessible?",
-    answer:""
+    answer:"Yes, Wheel chair is acessible."
   },
   {
     question:"How can I give feedback about my experience?",
-    answer:""
+    answer:"Feedback directing to the page where they can type the feedback."
   }
 ];
 
