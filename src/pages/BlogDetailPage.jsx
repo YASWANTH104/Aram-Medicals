@@ -27,6 +27,28 @@ const timeAgo = (timestamp) => {
   return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) > 1 ? "s" : ""} ago`;
 };
 
+// ⬇⬇ THIS FUNCTION CONVERTS YOUR HEADINGS TO HTML ⬇⬇
+const formatBlogText = (text) => {
+  if (!text) return "";
+
+  return text
+    // Main headings (H2)
+    .replace(/^(Comprehensive Care.*|Our Key Medical Services:|Why Choose Aram Medical Foundation\?)$/gm,
+      "<h2 class='text-2xl font-bold text-[#212878] mt-6 mb-2'>$1</h2>")
+
+    // Service headings (H3)
+    .replace(/^(❤️ Cardiology|⚕️ General Medicine|🌬️ Pulmonology|💧 Urology|🩺 Nephrology|🔪 General Surgery|🧠 Psychiatry|🚨 24×7 Emergency Care|👶 Pediatrics|🦴 Orthopedics \(Ortho\)|🌸 Gynaecology \(Women’s Health\))$/gm,
+      "<h3 class='text-xl font-semibold text-[#1aab3c] mt-4 mb-1'>$1</h3>")
+
+    // Convert line breaks to paragraphs
+    .replace(/\n\n/g, "</p><p>")
+    .replace(/\n/g, "<br/>")
+
+    // Wrap whole text in <p>
+    .replace(/^/, "<p>")
+    .concat("</p>");
+};
+
 export default function BlogDetailPage() {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
@@ -67,9 +89,10 @@ export default function BlogDetailPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
-              <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0">
         <FloatingHearts />
       </div>
+
       {/* Hero Image */}
       <div className="relative w-full h-96">
         <img
@@ -92,9 +115,11 @@ export default function BlogDetailPage() {
           <span>⏰ {timeAgo(blog.createdAt)}</span>
         </div>
 
-        <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">
-          {blog.description}
-        </p>
+        {/* ⬇⬇ Render formatted HTML here ⬇⬇ */}
+        <div
+          className="text-gray-700 leading-relaxed text-lg space-y-4"
+          dangerouslySetInnerHTML={{ __html: formatBlogText(blog.description) }}
+        ></div>
       </div>
     </div>
   );
