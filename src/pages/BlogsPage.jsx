@@ -119,9 +119,6 @@ export default function BlogsPage() {
                   <span className="flex items-center gap-1">
                     👀 {blog.views || 0}
                   </span>
-                  <span className="flex items-center gap-1">
-                    ⏰ {timeAgo(blog.createdAt)}
-                  </span>
                 </div>
               </div>
             </div>
