@@ -117,7 +117,6 @@ export default function BlogDetailPage() {
         <div className="flex flex-wrap justify-between items-center text-gray-600 text-sm mb-6">
           <span>✍️ By <span className="font-semibold">{blog.author}</span></span>
           <span>👀 {blog.views || 0} views</span>
-          <span>⏰ {timeAgo(blog.createdAt)}</span>
         </div>
 
         {/* ⬇⬇ Render formatted HTML here ⬇⬇ */}
