@@ -27,27 +27,32 @@ const timeAgo = (timestamp) => {
   return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) > 1 ? "s" : ""} ago`;
 };
 
-// ⬇⬇ THIS FUNCTION CONVERTS YOUR HEADINGS TO HTML ⬇⬇
+// ⬇⬇ FORMAT BLOG TEXT WITH DYNAMIC HEADINGS ⬇⬇
 const formatBlogText = (text) => {
   if (!text) return "";
 
   return text
-    // Main headings (H2)
-    .replace(/^(Comprehensive Care.*|Our Key Medical Services:|Why Choose Aram Medical Foundation\?)$/gm,
-      "<h2 class='text-2xl font-bold text-[#212878] mt-6 mb-2'>$1</h2>")
+    // 🔵 MAIN HEADING: *Heading*
+    .replace(
+      /^\*(.+?)\*$/gm,
+      "<h2 class='text-2xl font-bold text-[#212878] mt-6 mb-2'>$1</h2>"
+    )
 
-    // Service headings (H3)
-    .replace(/^(❤️ Cardiology|⚕️ General Medicine|🌬️ Pulmonology|💧 Urology|🩺 Nephrology|🔪 General Surgery|🧠 Psychiatry|🚨 24×7 Emergency Care|👶 Pediatrics|🦴 Orthopedics \(Ortho\)|🌸 Gynaecology \(Women’s Health\))$/gm,
-      "<h3 class='text-xl font-semibold text-[#1aab3c] mt-4 mb-1'>$1</h3>")
+    // 🟢 SECOND MAIN HEADING: #Heading#
+    .replace(
+      /^#(.+?)#$/gm,
+      "<h3 class='text-xl font-semibold text-[#1aab3c] mt-4 mb-1'>$1</h3>"
+    )
 
-    // Convert line breaks to paragraphs
+    // 🧾 Paragraph formatting
     .replace(/\n\n/g, "</p><p>")
     .replace(/\n/g, "<br/>")
 
-    // Wrap whole text in <p>
+    // Wrap everything in <p>
     .replace(/^/, "<p>")
     .concat("</p>");
 };
+
 
 export default function BlogDetailPage() {
   const { id } = useParams();
